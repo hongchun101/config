@@ -40,45 +40,45 @@ let g:WhichKey_FontSize = 22
 inoremap jj <Esc>
 
 "------------------vmap-------------------"
-vnoremap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
-vmap H ^
-vmap L $
-vnoremap <leader>em <action>(ExtractMethod)
-vnoremap <leader>iv <action>(IntroduceVariable)
-vnoremap <leader>ic <action>(IntroduceConstant)
-vnoremap <leader>if <action>(IntroduceField)
-vnoremap <leader>ip <action>(IntroduceParameter)
-vnoremap <leader>ii <action>(Inline)
-vnoremap <leader>ilp <action>(IntroduceFunctionParameter)
-vnoremap <leader>ilv <action>(IntroduceFunctionVariable)
-vnoremap <leader>y <action>($EditorTranslateAction)
+vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
+vnoremap H ^
+vnoremap L $
+vmap <leader>em <action>(ExtractMethod)
+vmap <leader>iv <action>(IntroduceVariable)
+vmap <leader>ic <action>(IntroduceConstant)
+vmap <leader>if <action>(IntroduceField)
+vmap <leader>ip <action>(IntroduceParameter)
+vmap <leader>ii <action>(Inline)
+vmap <leader>ilp <action>(IntroduceFunctionParameter)
+vmap <leader>ilv <action>(IntroduceFunctionVariable)
+vmap <leader>y <action>($EditorTranslateAction)
 
 "------------------nmap--------------"
 " 单键映射
-nnoremap ] <action>(VcsShowNextChangeMarker)
-nnoremap [ <action>(VcsShowPrevChangeMarker)
+nmap ] <action>(VcsShowNextChangeMarker)
+nmap [ <action>(VcsShowPrevChangeMarker)
 nnoremap = V
-nnoremap - <action>(OptimizeImports)
+nmap - <action>(OptimizeImports)
 
 " shift映射
-nnoremap H ^
-nnoremap L $
-nnoremap J A;<ESC>o
-nnoremap R <action>(RenameElement)
+nmap H ^
+nmap L $
+nmap J A;<ESC>o
+nmap R <action>(RenameElement)
 
 " ctrl映射
-nnoremap <C-[> gT
-nnoremap <C-]> gt
+nmap <C-[> gT
+nmap <C-]> gt
 
 " art映射
-nnoremap <A-[> <action>(Back)
-nnoremap <A-]> <action>(Forward)
-nnoremap <A-Right> <action>(NextSplitter)
-nnoremap <A-Left> <action>(PrevSplitter)
-nnoremap <C-Up> <action>(MethodUp)
-nnoremap <C-Down> <action>(MethodDown)
-nnoremap <C-Right> gt
-nnoremap <C-Left> gT
+nmap <A-[> <action>(Back)
+nmap <A-]> <action>(Forward)
+nmap <A-Right> <action>(NextSplitter)
+nmap <A-Left> <action>(PrevSplitter)
+nmap <C-Up> <action>(MethodUp)
+nmap <C-Down> <action>(MethodDown)
+nmap <C-Right> gt
+nmap <C-Left> gT
 
 " g命令
 nnoremap gn <action>(NextSplitter)
@@ -88,17 +88,17 @@ nnoremap gk <C-w>k<CR>
 nnoremap gl <C-w>l<CR>
 nnoremap ga '.
 let g:WhichKeyDesc_Goto_SuperMethod="gs super method"
-nnoremap gs <action>(GotoSuperMethod)
+nmap gs <action>(GotoSuperMethod)
 let g:WhichKeyDesc_Goto_Implementation="gi implementation"
-nnoremap gi <action>(GotoImplementation)
+nmap gi <action>(GotoImplementation)
 let g:WhichKeyDesc_Goto_Declaration="gd declaration"
-nnoremap gd <action>(GotoDeclaration)
-"nnoremap ghc <action>(CallHierarchy)
-"nnoremap ght <action>(TypeHierarchy)
-"nnoremap ghm <action>(MethodHierarchy)
-"nnoremap gp <action>(ParameterInfo)
-"nnoremap gf <action>(FileStructurePopup)
-"nnoremap gb <action>(JumpToLastChange)
+nmap gd <action>(GotoDeclaration)
+"nmap ghc <action>(CallHierarchy)
+"nmap ght <action>(TypeHierarchy)
+"nmap ghm <action>(MethodHierarchy)
+"nmap gp <action>(ParameterInfo)
+"nmap gf <action>(FileStructurePopup)
+"nmap gb <action>(JumpToLastChange)
 
 " z命令
 nnoremap zk zb
@@ -107,67 +107,67 @@ nnoremap zj zt
 " leader键映射
 let g:WhichKeyDesc_Leader2="<leader><leader> prefix"
 let g:WhichKeyDesc_Leader2_CodeMenu="<leader><leader>c codemenu"
-nnoremap <leader><leader>c <action>(CodeMenu)
+nmap <leader><leader>c <action>(CodeMenu)
 let g:WhichKeyDesc_Leader2_Generate="<leader><leader>g generate"
-nnoremap <leader><leader>g <action>(Generate)
+nmap <leader><leader>g <action>(Generate)
 let g:WhichKeyDesc_Test="<leader><leader>t test"
-nnoremap <leader><leader>t <action>(GotoTest)
+nmap <leader><leader>t <action>(GotoTest)
 
 let g:WhichKeyDesc_Terminal="<leader>'"
-nnoremap <leader>' <action>(ActivateTerminalToolWindow)
+nmap <leader>' <action>(ActivateTerminalToolWindow)
 
 let g:WhichKeyDesc_Rename="<leader>r rename"
-nnoremap <leader>r <action>(RenameElement)
+nmap <leader>r <action>(RenameElement)
 let g:WhichKeyDesc_Fix="<leader>x fix"
-nnoremap <leader>x <action>(ShowIntentionActions)
+nmap <leader>x <action>(ShowIntentionActions)
 
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
-nnoremap <leader>bd :q<CR>
+nmap <leader>bd :q<CR>
 let g:WhichKeyDesc_Buffer_W="<leader>bw save"
-nnoremap <leader>bw :w<CR>
+nmap <leader>bw :w<CR>
 
 let g:WhichKeyDesc_CC="<leader>c copy/close"
 let g:WhichKeyDesc_CC_CopyFileName="<leader>cn copy filename"
-nnoremap <leader>cn <action>(CopyFileName)
+nmap <leader>cn <action>(CopyFileName)
 let g:WhichKeyDesc_CC_CopyReference="<leader>cr copy reference"
-nnoremap <leader>cr <action>(CopyReference)
+nmap <leader>cr <action>(CopyReference)
 let g:WhichKeyDesc_CC_CopyAbsolutePath="<leader>cp copy abstract path"
-nnoremap <leader>cp <action>(CopyAbsolutePath)
+nmap <leader>cp <action>(CopyAbsolutePath)
 let g:WhichKeyDesc_CC_CopySource="<leader>cs copy source path"
-nnoremap <leader>cs <action>(CopySourceRootPath)
+nmap <leader>cs <action>(CopySourceRootPath)
 
 let g:WhichKeyDesc_CloseAll="<leader>ca close all"
-nnoremap <leader>ca <action>(CloseAllEditorsButActive)
+nmap<leader>ca <action>(CloseAllEditorsButActive)
 let g:WhichKeyDesc_CloseEditor="<leader>ce close current"
-nnoremap <leader>ce <action>(CloseEditor)
+nmap <leader>ce <action>(CloseEditor)
 let g:WhichKeyDesc_CloseUnmodified="<leader>cu close unmodified"
-nnoremap <leader>cu <action>(CloseAllUnmodifiedEditors)
+nmap <leader>cu <action>(CloseAllUnmodifiedEditors)
 
 let g:WhichKeyDesc_DR="<leader>d debug"
 let g:WhichKeyDesc_DR_Debug="<leader>dd debug"
-nnoremap <leader>dd <action>(Debug)
+nmap <leader>dd <action>(Debug)
 let g:WhichKeyDesc_DR_Stop="<leader>ds stop"
-nnoremap <leader>ds <action>(Stop)
+nmap <leader>ds <action>(Stop)
 let g:WhichKeyDesc_DR_Breakpoint="<leader>dv view breakpoints"
-nnoremap <leader>dv <action>(ViewBreakpoints)
+nmap <leader>dv <action>(ViewBreakpoints)
 let g:WhichKeyDesc_DR_Config="<leader>dc config"
-nnoremap <leader>dc <action>(RunConfiguration)
+nmap <leader>dc <action>(RunConfiguration)
 let g:WhichKeyDesc_DR_Update="<leader>du update"
-nnoremap <leader>du <action>(UpdateRunningApplication)
+nmap <leader>du <action>(UpdateRunningApplication)
 let g:WhichKeyDesc_Update="<leader>u update"
-nnoremap <leader>u <action>(UpdateRunningApplication)
+nmap <leader>u <action>(UpdateRunningApplication)
 
 let g:WhichKeyDesc_DR_BreakPoint="zz breakpoint"
-nnoremap zz <action>(ToggleLineBreakpoint)
+nmap zz <action>(ToggleLineBreakpoint)
 
 "let g:WhichKeyDesc_Run="<leader>r run"
 "let g:WhichKeyDesc_Run_Run="<leader>rr run"
-"nnoremap <leader>rr <action>(run)
-"let g:WhichKeyDesc_Run_Coverage="<leader>rc coverage" 
-"nnoremap <leader>rc <action>(RunCoverage)
+"nmap <leader>rr <action>(run)
+"let g:WhichKeyDesc_Run_Coverage="<leader>rc coverage"
+"nmap <leader>rc <action>(RunCoverage)
 "let g:WhichKeyDesc_Run_Stop="<leader>rs stop"
-"nnoremap <leader>rs <action>(Stop)
+"nmap <leader>rs <action>(Stop)
 
 "-----------------重构----------------------"
 let g:WhichKeyDesc_E="<leader>e"
@@ -175,200 +175,200 @@ let g:WhichKeyDesc_I="<leader>i"
 let g:WhichKeyDesc_P="<leader>p"
 
 let g:WhichKeyDesc_Extract_Method="<leader>em method"
-nnoremap <leader>em <action>(ExtractMethod)
+nmap <leader>em <action>(ExtractMethod)
 let g:WhichKeyDesc_Class="<leader>ec class"
-nnoremap <leader>ec <action>(ExtractClass)
+nmap <leader>ec <action>(ExtractClass)
 let g:WhichKeyDesc_Implementation="<leader>ei implementation"
-nnoremap <leader>ei <action>(ExtractInterface)
+nmap <leader>ei <action>(ExtractInterface)
 let g:WhichKeyDesc_SuperClass="<leader>es super class"
-nnoremap <leader>es <action>(ExtractSuperclass)
+nmap <leader>es <action>(ExtractSuperclass)
 
 let g:WhichKeyDesc_Introduce_Variable="<leader>iv variable"
-nnoremap <leader>iv <action>(IntroduceVariable)
+nmap <leader>iv <action>(IntroduceVariable)
 let g:WhichKeyDesc_Introduce_Constant="<leader>ic constant"
-nnoremap <leader>ic <action>(IntroduceConstant)
+nmap <leader>ic <action>(IntroduceConstant)
 let g:WhichKeyDesc_Introduce_Field="<leader>if field"
-nnoremap <leader>if <action>(IntroduceField)
+nmap <leader>if <action>(IntroduceField)
 let g:WhichKeyDesc_Introduce_Parameter="<leader>ip parameter"
-nnoremap <leader>ip <action>(IntroduceParameter)
+nmap <leader>ip <action>(IntroduceParameter)
 let g:WhichKeyDesc_Inline="<leader>ii inline"
-nnoremap <leader>ii <action>(Inline)
+nmap <leader>ii <action>(Inline)
 let g:WhichKeyDesc_Introduce_FunctionParameter="<leader>ilp function parameter"
-nnoremap <leader>ilp <action>(IntroduceFunctionParameter)
+nmap <leader>ilp <action>(IntroduceFunctionParameter)
 let g:WhichKeyDesc_Introduce_FunctionVariable="<leader>ilv function variable"
-nnoremap <leader>ilv <action>(IntroduceFunctionVariable)
+nmap <leader>ilv <action>(IntroduceFunctionVariable)
 
 
 let g:WhichKeyDesc_MemberPushDown="<leader>pd push down"
-nnoremap <leader>pd <action>(MemberPushDown)
+nmap <leader>pd <action>(MemberPushDown)
 let g:WhichKeyDesc_MemberPullUp="<leader>pu pull up"
-nnoremap <leader>pu <action>(MembersPullUp)
+nmap <leader>pu <action>(MembersPullUp)
 
 "---------------------------------------------------"
 
 let g:WhichKeyDesc_OverrideMethods="<leader>om override methods"
-nnoremap <leader>om <action>(OverrideMethods)
+nmap <leader>om <action>(OverrideMethods)
 let g:WhichKeyDesc_ImplementMethods="<leader>im implement methods"
-nnoremap <leader>im <action>(ImplementMethods)
-"nnoremap <leader>ts <action>(Actions.ActionsPlugin.GenerateToString)
+nmap <leader>im <action>(ImplementMethods)
+"nmap <leader>ts <action>(Actions.ActionsPlugin.GenerateToString)
 
 let g:WhichKeyDesc_File="<leader>f file/find"
 let g:WhichKeyDesc_File_Menu="<leader>fm file menu"
-nnoremap <leader>fm <action>(FileMenu)
+nmap <leader>fm <action>(FileMenu)
 let g:WhichKeyDesc_File_History="<leader>fh file history"
-nnoremap <leader>fh <action>(LocalHistory.ShowHistory)
+nmap <leader>fh <action>(LocalHistory.ShowHistory)
 let g:WhichKeyDesc_Find_Action="<leader>fa action"
-nnoremap <leader>fa <action>(GotoAction)
+nmap <leader>fa <action>(GotoAction)
 let g:WhichKeyDesc_Find_Search="<leader>ff search everywhere"
-nnoremap <leader>ff <action>(SearchEverywhere)
+nmap <leader>ff <action>(SearchEverywhere)
 let g:WhichKeyDesc_File_Open="<leader>fo open in explorer"
-nnoremap <leader>fo <action>(RevealIn)
+nmap <leader>fo <action>(RevealIn)
 let g:WhichKeyDesc_File_Move="<leader>fm file move"
-nnoremap <leader>fm <action>(Move)
+nmap <leader>fm <action>(Move)
 let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
-nnoremap <leader>fc <action>(CopyElement)
+nmap <leader>fc <action>(CopyElement)
 
 
 "---------------------------git---------------------------------"
 let g:WhichKeyDesc_Git="<leader>g git"
 let g:WhichKeyDesc_Git_Annotate="<leader>ga annotate"
-nnoremap <leader>ga <action>(Annotate)
+nmap <leader>ga <action>(Annotate)
 let g:WhichKeyDesc_Git_Commit_Window="<leader>gk commit window"
-nnoremap <leader>gk <action>(ActivateCommitToolWindow)
+nmap <leader>gk <action>(ActivateCommitToolWindow)
 let g:WhichKeyDesc_Git_Branch_Compare="<leader>gc compare whit branch"
-nnoremap <leader>gc <action>(Git.CompareWithBranch)
+nmap <leader>gc <action>(Git.CompareWithBranch)
 let g:WhichKeyDesc_Git_History="<leader>gh history"
-nnoremap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
 let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
-nnoremap <leader>gr <action>(Vcs.RollbackChangedLines)
+nmap <leader>gr <action>(Vcs.RollbackChangedLines)
 let g:WhichKeyDesc_Git_Log="<leader>gl log"
-nnoremap <leader>gl <action>(Vcs.Show.Log)
+nmap <leader>gl <action>(Vcs.Show.Log)
 let g:WhichKeyDesc_Git_Branch="<leader>gb branches"
-nnoremap <leader>gb <action>(Vcs.ShowBranches)
+nmap <leader>gb <action>(Vcs.ShowBranches)
 let g:WhichKeyDesc_Git_Add="<leader>g= add"
-nnoremap <leader>g= <action>(Git.Add)
+nmap <leader>g= <action>(Git.Add)
 "------------------------git end-----------------------------------"
 
 let g:WhichKeyDesc_Bookmark="<leader>h"
-nnoremap <leader>h <action>(ToggleBookmark)
+nmap <leader>h <action>(ToggleBookmark)
 "let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>; mnemonic bookmark"
-"nnoremap <leader>; <action>(ToggleBookmarkWithMnemonic)
+"nmap <leader>; <action>(ToggleBookmarkWithMnemonic)
 let g:WhichKeyDesc_Next_Bookmark="<leader>j"
-nnoremap <leader>j <action>(GotoNextBookmark)
+nmap <leader>j <action>(GotoNextBookmark)
 let g:WhichKeyDesc_Previous_Bookmark="<leader>k"
-nnoremap <leader>k <action>(GotoPreviousBookmark)
+nmap <leader>k <action>(GotoPreviousBookmark)
 let g:WhichKeyDesc_Show_Bookmark="<leader>l"
-nnoremap <leader>l <action>(ShowBookmarks)
+nmap <leader>l <action>(ShowBookmarks)
 
 
 let g:WhichKeyDesc_Idea="<leader>I idea"
 let g:WhichKeyDesc_Idea_Setting="<leader>Is setting"
-nnoremap <leader>Is <action>(ShowSettings)
+nmap <leader>Is <action>(ShowSettings)
 let g:WhichKeyDesc_Idea_ChangeView="<leader>Iv view mode"
-nnoremap <leader>Iv <action>(ChangeView)
+nmap <leader>Iv <action>(ChangeView)
 let g:WhichKeyDesc_Idea_FullScreen="<leader>If full screen"
-nnoremap <leader>If <action>(ToggleFullScreen)
+nmap <leader>If <action>(ToggleFullScreen)
 let g:WhichKeyDesc_Idea_Bar="<leader>Ib bar"
 let g:WhichKeyDesc_Idea_MainMenu="<leader>Ibm main menu"
-nnoremap <leader>Ibm <action>(ViewMainMenu)
+nmap <leader>Ibm <action>(ViewMainMenu)
 let g:WhichKeyDesc_Idea_Toolbar="<leader>Ibt toolbar"
-nnoremap <leader>Ibt <action>(ViewToolBar)
+nmap <leader>Ibt <action>(ViewToolBar)
 let g:WhichKeyDesc_Idea_StatusBar="<leader>Ibs statusbar"
-nnoremap <leader>Ibs <action>(ViewStatusBar)
+nmap <leader>Ibs <action>(ViewStatusBar)
 
 
 let g:WhichKeyDesc_Maven="<leader>m maven"
 "let g:WhichKeyDesc_Maven_Window="<leader>ma maven window"
-"nnoremap <leader>ma <action>(ActivateMavenToolWindow)
+"nmap <leader>ma <action>(ActivateMavenToolWindow)
 let g:WhichKeyDesc_Maven_Run="<leader>mm execute"
-nnoremap <leader>mm <action>(Maven.ExecuteGoal)
+nmap <leader>mm <action>(Maven.ExecuteGoal)
 let g:WhichKeyDesc_Maven_Import="<leader>mi reimport"
-nnoremap <leader>mi <action>(Maven.Reimport)
+nmap <leader>mi <action>(Maven.Reimport)
 let g:WhichKeyDesc_Maven_Search="<leader>ms search"
-nnoremap <leader>ms <action>(coderead.maven.search)
+nmap <leader>ms <action>(coderead.maven.search)
 
 
 let g:WhichKeyDesc_NN="<leader>n new"
 let g:WhichKeyDesc_NN_Java="<leader>nj java"
-nnoremap <leader>nj <action>(NewClass)
+nmap <leader>nj <action>(NewClass)
 let g:WhichKeyDesc_NN_Dir="<leader>nd directory"
-nnoremap <leader>nd <action>(NewDir)
+nmap <leader>nd <action>(NewDir)
 let g:WhichKeyDesc_NN_File="<leader>nf file"
-nnoremap <leader>nf <action>(NewFile)
+nmap <leader>nf <action>(NewFile)
 "let g:WhichKeyDesc_NN_Javascript="<leader>njs javascript"
-"nnoremap <leader>njs :action NewJavaScriptFile<CR>
+"nmap <leader>njs :action NewJavaScriptFile<CR>
 let g:WhichKeyDesc_NN_Javascript="<leader>ns scala"
-nnoremap <leader>ns :action Scala.NewClass<CR>
+nmap <leader>ns :action Scala.NewClass<CR>
 let g:WhichKeyDesc_NN_Html="<leader>nh html"
-nnoremap <leader>nh <action>(NewHtmlFile)
+nmap <leader>nh <action>(NewHtmlFile)
 let g:WhichKeyDesc_NN_Xml="<leader>nx xml"
-nnoremap <leader>nx <action>(NewXml)
+nmap <leader>nx <action>(NewXml)
 let g:WhichKeyDesc_NN_Typescript="<leader>nt typescript"
-nnoremap <leader>nt <action>(NewTypeScriptFile)
+nmap <leader>nt <action>(NewTypeScriptFile)
 let g:WhichKeyDesc_NN_Kotlin="<leader>nk kotlin"
-nnoremap <leader>nk <action>(Kotlin.NewFile)
+nmap <leader>nk <action>(Kotlin.NewFile)
 
 
 let g:WhichKeyDesc_Project="<leader>p project"
 let g:WhichKeyDesc_Project_Close="<leader>pc close"
-nnoremap <leader>pc <action>(CloseProject)
+nmap <leader>pc <action>(CloseProject)
 let g:WhichKeyDesc_Project_New="<leader>pn new"
-nnoremap <leader>pn <action>(NewProject)
+nmap <leader>pn <action>(NewProject)
 let g:WhichKeyDesc_Project_Import="<leader>pi import"
-nnoremap <leader>pi <action>(ImportProject)
+nmap <leader>pi <action>(ImportProject)
 let g:WhichKeyDesc_Project_Recent="<leader>po recent"
-nnoremap <leader>po <action>(RecentProjectListGroup)
+nmap <leader>po <action>(RecentProjectListGroup)
 let g:WhichKeyDesc_Project_Next="<leader>pl next"
-nnoremap <leader>pl <action>(NextProjectWindow)
+nmap <leader>pl <action>(NextProjectWindow)
 
 
 let g:WhichKeyDesc_Sonar="<leader>s sonar"
 "let g:WhichKeyDesc_Sonar_Tool="<leader>ss "
-"nnoremap <leader>ss <action>(ActivateSonaRLintToolWindow)
+"nmap <leader>ss <action>(ActivateSonaRLintToolWindow)
 let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
-nnoremap <leader>ss <action>(SonarLint.AnalyzeFiles)
+nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
 let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
-nnoremap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
+nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
 let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
-nnoremap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
+nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
 
 let g:WhichKeyDesc_Tool="<leader>t tool"
 let g:WhichKeyDesc_Tool_JSON="<leader>tj json"
-nnoremap <leader>tj <action>(ActivateJsonParserToolWindow)
+nmap <leader>tj <action>(ActivateJsonParserToolWindow)
 let g:WhichKeyDesc_Tool_Explorer="<leader>tc open class"
-nnoremap <leader>tc <action>(Tool_External Tools_OpenClassInExplorer)
+nmap <leader>tc <action>(Tool_External Tools_OpenClassInExplorer)
 let g:WhichKeyDesc_Tool_Nvim="<leader>tn nvim"
-nnoremap <leader>tn <action>(Tool_External Tools_nvim)
+nmap <leader>tn <action>(Tool_External Tools_nvim)
 let g:WhichKeyDesc_Tool_Todo="<leader>tt todo"
-nnoremap <leader>tt <action>(ActivateTODOToolWindow)
+nmap <leader>tt <action>(ActivateTODOToolWindow)
 
-"nnoremap <leader>pa <action>(ActivateProjectToolWindow)
-"nnoremap <leader>pp <action>(RecentProjectListGroup)
+"nmap <leader>pa <action>(ActivateProjectToolWindow)
+"nmap <leader>pp <action>(RecentProjectListGroup)
 
 
 let g:WhichKeyDesc_Vim="<leader>v vim"
 let g:WhichKeyDesc_Vim_EditVimrc="<leader>ve edit vimrc"
-nnoremap <leader>ve :e C:\\Users\\12513\\.ideavimrc<CR>
+nmap <leader>ve :e C:\\Users\\12513\\.ideavimrc<CR>
 let g:WhichKeyDesc_Vim_Source="<leader>vs source"
-nnoremap <leader>vs :source C:\\Users\\12513\\.ideavimrc<CR>
+nmap <leader>vs :source C:\\Users\\12513\\.ideavimrc<CR>
 
 let g:WhichKeyDesc_Window="<leader>w window"
 let g:WhichKeyDesc_Window_Split="<leader>ws  split"
-nnoremap <leader>ws :sp<CR>
+nmap <leader>ws :sp<CR>
 let g:WhichKeyDesc_Window_VSplit="<leader>wv vsplit"
-nnoremap <leader>wv :vs<CR>
+nmap <leader>wv :vs<CR>
 let g:WhichKeyDesc_Window_Close="<leader>wc close"
-nnoremap <leader>wc <C-w>c<CR>
+nmap <leader>wc <C-w>c<CR>
 let g:WhichKeyDesc_Window_CloseOther="<leader>wo close other"
-nnoremap <leader>wo <C-w>o<CR>
+nmap <leader>wo <C-w>o<CR>
 let g:WhichKeyDesc_Window_Hide="<leader>wm hide windows"
-nnoremap <leader>wm <action>(HideAllWindows)
+nmap <leader>wm <action>(HideAllWindows)
 
 
 let g:WhichKeyDesc_Translate_Replace="<leader>Y"
-nnoremap <leader>Y <action>($TranslateAndReplaceAction)
+nmap <leader>Y <action>($TranslateAndReplaceAction)
 let g:WhichKeyDesc_Translate="<leader>y translate"
-nnoremap <leader>y <action>($EditorTranslateAction)
+nmap <leader>y <action>($EditorTranslateAction)
 
 nnoremap <leader>zo <action>(ExpandAllRegions)
 nnoremap <leader>zc <action>(CollapseAllRegions)
