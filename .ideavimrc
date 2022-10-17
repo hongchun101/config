@@ -81,7 +81,7 @@ nmap <C-Right> gt
 nmap <C-Left> gT
 
 " g命令
-nnoremap gn <action>(NextSplitter)
+nmap gn <action>(NextSplitter)
 nnoremap gh <C-w>h<CR>
 nnoremap gj <C-w>j<CR>
 nnoremap gk <C-w>k<CR>
@@ -369,5 +369,5 @@ nmap <leader>Y <action>($TranslateAndReplaceAction)
 let g:WhichKeyDesc_Translate="<leader>y translate"
 nmap <leader>y <action>($EditorTranslateAction)
 
-nnoremap <leader>zo <action>(ExpandAllRegions)
-nnoremap <leader>zc <action>(CollapseAllRegions)
+nmap <leader>zo <action>(ExpandAllRegions)
+nmap <leader>zc <action>(CollapseAllRegions)
