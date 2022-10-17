@@ -103,6 +103,7 @@ nmap gd <action>(GotoDeclaration)
 " z命令
 nnoremap zk zb
 nnoremap zj zt
+nmap zz <action>(ToggleLineBreakpoint)
 
 " leader键映射
 let g:WhichKeyDesc_Leader2="<leader><leader> prefix"
@@ -123,7 +124,7 @@ nmap <leader>x <action>(ShowIntentionActions)
 
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
-nmap <leader>bd :q<CR>
+let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Buffer_W="<leader>bw save"
 nmap <leader>bw :w<CR>
 
@@ -158,8 +159,6 @@ nmap <leader>du <action>(UpdateRunningApplication)
 let g:WhichKeyDesc_Update="<leader>u update"
 nmap <leader>u <action>(UpdateRunningApplication)
 
-let g:WhichKeyDesc_DR_BreakPoint="zz breakpoint"
-nmap zz <action>(ToggleLineBreakpoint)
 
 "let g:WhichKeyDesc_Run="<leader>r run"
 "let g:WhichKeyDesc_Run_Run="<leader>rr run"
