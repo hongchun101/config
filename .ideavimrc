@@ -100,8 +100,8 @@ nmap gd <action>(GotoDeclaration)
 
 "---------------------------git---------------------------------"
 let g:WhichKeyDesc_Git="<leader>g git"
-let g:WhichKeyDesc_Git_RollbackLines="gr rollback lines"
-nmap gr <action>(Vcs.RollbackChangedLines)
+let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
+nmap <leader>gr <action>(Vcs.RollbackChangedLines)
 let g:WhichKeyDesc_Git_Annotate="<leader>ga annotate"
 nmap <leader>ga <action>(Annotate)
 let g:WhichKeyDesc_Git_Commit_Window="<leader>gk commit window"
