@@ -55,8 +55,10 @@ vmap <leader>y <action>($EditorTranslateAction)
 
 "------------------nmap--------------"
 " 单键映射
-nmap ] <action>(VcsShowNextChangeMarker)
-nmap [ <action>(VcsShowPrevChangeMarker)
+nmap gj <action>(VcsShowNextChangeMarker)
+nmap gk <action>(VcsShowPrevChangeMarker)
+nmap ] <action>(GotoNextError)
+nmap [ <action>(GotoPreviousError)
 nnoremap = V
 nmap - <action>(OptimizeImports)
 
@@ -82,10 +84,6 @@ nmap <C-Left> gT
 
 " g命令
 nmap gn <action>(NextSplitter)
-nnoremap gh <C-w>h<CR>
-nnoremap gj <C-w>j<CR>
-nnoremap gk <C-w>k<CR>
-nnoremap gl <C-w>l<CR>
 nnoremap ga '.
 let g:WhichKeyDesc_Goto_SuperMethod="gs super method"
 nmap gs <action>(GotoSuperMethod)
@@ -99,6 +97,27 @@ nmap gd <action>(GotoDeclaration)
 "nmap gp <action>(ParameterInfo)
 "nmap gf <action>(FileStructurePopup)
 "nmap gb <action>(JumpToLastChange)
+
+"---------------------------git---------------------------------"
+let g:WhichKeyDesc_Git="<leader>g git"
+let g:WhichKeyDesc_Git_RollbackLines="gr rollback lines"
+nmap gr <action>(Vcs.RollbackChangedLines)
+let g:WhichKeyDesc_Git_Annotate="<leader>ga annotate"
+nmap <leader>ga <action>(Annotate)
+let g:WhichKeyDesc_Git_Commit_Window="<leader>gk commit window"
+nmap <leader>gk <action>(ActivateCommitToolWindow)
+let g:WhichKeyDesc_Git_Branch_Compare="<leader>gc compare whit branch"
+nmap <leader>gc <action>(Git.CompareWithBranch)
+let g:WhichKeyDesc_Git_History="<leader>gh history"
+nmap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
+let g:WhichKeyDesc_Git_Log="<leader>gl log"
+nmap <leader>gl <action>(Vcs.Show.Log)
+let g:WhichKeyDesc_Git_Branch="<leader>gb branches"
+nmap <leader>gb <action>(Vcs.ShowBranches)
+let g:WhichKeyDesc_Git_Add="<leader>g= add"
+nmap <leader>g= <action>(Git.Add)
+"------------------------git end-----------------------------------"
+
 
 " z命令
 nnoremap zk zb
@@ -177,7 +196,7 @@ let g:WhichKeyDesc_Extract_Method="<leader>em method"
 nmap <leader>em <action>(ExtractMethod)
 let g:WhichKeyDesc_Class="<leader>ec class"
 nmap <leader>ec <action>(ExtractClass)
-let g:WhichKeyDesc_Implementation="<leader>ei implementation"
+let g:WhichKeyDesc_Interface="<leader>ei interface"
 nmap <leader>ei <action>(ExtractInterface)
 let g:WhichKeyDesc_SuperClass="<leader>es super class"
 nmap <leader>es <action>(ExtractSuperclass)
@@ -227,26 +246,6 @@ nmap <leader>fm <action>(Move)
 let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
 nmap <leader>fc <action>(CopyElement)
 
-
-"---------------------------git---------------------------------"
-let g:WhichKeyDesc_Git="<leader>g git"
-let g:WhichKeyDesc_Git_Annotate="<leader>ga annotate"
-nmap <leader>ga <action>(Annotate)
-let g:WhichKeyDesc_Git_Commit_Window="<leader>gk commit window"
-nmap <leader>gk <action>(ActivateCommitToolWindow)
-let g:WhichKeyDesc_Git_Branch_Compare="<leader>gc compare whit branch"
-nmap <leader>gc <action>(Git.CompareWithBranch)
-let g:WhichKeyDesc_Git_History="<leader>gh history"
-nmap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
-let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
-nmap <leader>gr <action>(Vcs.RollbackChangedLines)
-let g:WhichKeyDesc_Git_Log="<leader>gl log"
-nmap <leader>gl <action>(Vcs.Show.Log)
-let g:WhichKeyDesc_Git_Branch="<leader>gb branches"
-nmap <leader>gb <action>(Vcs.ShowBranches)
-let g:WhichKeyDesc_Git_Add="<leader>g= add"
-nmap <leader>g= <action>(Git.Add)
-"------------------------git end-----------------------------------"
 
 let g:WhichKeyDesc_Bookmark="<leader>h"
 nmap <leader>h <action>(ToggleBookmark)
