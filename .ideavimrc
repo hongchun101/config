@@ -346,9 +346,9 @@ nmap <leader>tt <action>(ActivateTODOToolWindow)
 
 let g:WhichKeyDesc_Vim="<leader>v vim"
 let g:WhichKeyDesc_Vim_EditVimrc="<leader>ve edit vimrc"
-nmap <leader>ve :e C:\\Users\\12513\\.ideavimrc<CR>
+nmap <leader>ve :e ~\\.ideavimrc<CR>
 let g:WhichKeyDesc_Vim_Source="<leader>vs source"
-nmap <leader>vs :source C:\\Users\\12513\\.ideavimrc<CR>
+nmap <leader>vs :source ~\\.ideavimrc<CR>
 
 let g:WhichKeyDesc_Window="<leader>w window"
 let g:WhichKeyDesc_Window_Split="<leader>ws  split"
