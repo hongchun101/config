@@ -55,8 +55,6 @@ vmap <leader>y <action>($EditorTranslateAction)
 
 "------------------nmap--------------"
 " 单键映射
-nmap gj <action>(VcsShowNextChangeMarker)
-nmap gk <action>(VcsShowPrevChangeMarker)
 nmap ] <action>(GotoNextError)
 nmap [ <action>(GotoPreviousError)
 nnoremap = V
@@ -84,6 +82,8 @@ nmap <C-Left> gT
 
 " g命令
 nmap gn <action>(NextSplitter)
+nmap gj <action>(VcsShowNextChangeMarker)
+nmap gk <action>(VcsShowPrevChangeMarker)
 nnoremap ga '.
 let g:WhichKeyDesc_Goto_SuperMethod="gs super method"
 nmap gs <action>(GotoSuperMethod)
