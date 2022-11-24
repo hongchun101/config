@@ -143,6 +143,7 @@ nmap <leader>x <action>(ShowIntentionActions)
 
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
+nmap <leader>bd :bdelete<CR>
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Buffer_W="<leader>bw save"
 nmap <leader>bw :w<CR>
@@ -158,7 +159,7 @@ let g:WhichKeyDesc_CC_CopySource="<leader>cs copy source path"
 nmap <leader>cs <action>(CopySourceRootPath)
 
 let g:WhichKeyDesc_CloseAll="<leader>ca close all"
-nmap<leader>ca <action>(CloseAllEditorsButActive)
+nmap <leader>ca <action>(CloseAllEditorsButActive)
 let g:WhichKeyDesc_CloseEditor="<leader>ce close current"
 nmap <leader>ce <action>(CloseEditor)
 let g:WhichKeyDesc_CloseUnmodified="<leader>cu close unmodified"
