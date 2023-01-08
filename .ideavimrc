@@ -97,6 +97,14 @@ nmap zj <action>(MethodDown)
 nmap zz <action>(ToggleLineBreakpoint)
 
 
+" leader键映射
+nmap <leader><leader>c <action>(CodeMenu)
+nmap <leader><leader>g <action>(Generate)
+nmap <leader><leader>t <action>(GotoTest)
+nmap <leader><leader>f <action>(ToggleFullScreen)
+nmap <leader><leader>p <action>(TogglePresentationMode)
+
+
 "---------------------------git---------------------------------"
 let g:WhichKeyDesc_Git="<leader>g git"
 let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
@@ -117,13 +125,6 @@ let g:WhichKeyDesc_Git_Add="<leader>g= add"
 nmap <leader>g= <action>(Git.Add)
 "------------------------git end-----------------------------------"
 
-
-" leader键映射
-nmap <leader><leader>c <action>(CodeMenu)
-nmap <leader><leader>g <action>(Generate)
-nmap <leader><leader>t <action>(GotoTest)
-nmap <leader><leader>f <action>(ToggleFullScreen)
-nmap <leader><leader>p <action>(TogglePresentationMode)
 
 let g:WhichKeyDesc_Terminal="<leader>' terminal"
 nmap <leader>' <action>(ActivateTerminalToolWindow)
