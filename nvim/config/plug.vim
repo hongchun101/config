@@ -10,6 +10,8 @@ Plug 'glepnir/zephyr-nvim'
 
 Plug 'neoclide/coc.nvim', {'branch':'relase'} 
 
+Plug 'ggandor/leap.nvim'
+Plug 'ggandor/flit.nvim'
 Plug 'sheerun/vim-polyglot' " 语法高亮
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'famiu/bufdelete.nvim'
@@ -104,4 +106,3 @@ Plug 'nvim-telescope/telescope.nvim'
 " 语言
 "Rust
 "Plug 'rust-lang/rust.vim'
-call plug#end()

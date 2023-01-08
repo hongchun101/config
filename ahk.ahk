@@ -111,22 +111,6 @@ g_ControlRepeatDetected := false
     }
 } 
 return
-return
-#4::
-{DetectHiddenWindows, On	
-	SetTitleMatchMode, 2	
-	WinGet, winid, ID, 任务管理
-	SetTitleMatchMode, 1	
-	If (winid) {		
-		WinWait, ahk_id %winid%		
-		WinShow		
-		WinActivate		
-		ControlFocus, EditComponent2, A		
-		ControlSetText, EditComponent2,, A	
-	} 
-    DetectHiddenWindows, Off
-}
-return
 #q::
 {
  Run, https://www.baidu.com/s?wd=%clipboard%
@@ -303,4 +287,3 @@ WinTopToggle(w) {
     SetTimer, RemoveToolTip, Off
     ToolTip
     return
-}
