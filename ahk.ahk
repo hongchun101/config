@@ -111,25 +111,6 @@ g_ControlRepeatDetected := false
     }
 } 
 return
->+b:: 
-{
-    Run www.bilibili.com
-}
-return
->+g::
-{
-    Run www.github.com
-}
-return 
->+p::
-{
-    Run www.processon.com
-}
-return 
->+l::
-{
-    Run https://leetcode.cn/problemset/all/
-}
 return
 #4::
 {DetectHiddenWindows, On	
