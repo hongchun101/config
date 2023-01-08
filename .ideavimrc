@@ -72,26 +72,23 @@ nmap R <action>(RenameElement)
 
 
 " g命令
+nnoremap ga '.
 nmap gn <action>(NextSplitter)
 nmap gj <action>(VcsShowNextChangeMarker)
 nmap gk <action>(VcsShowPrevChangeMarker)
-nnoremap ga '.
-let g:WhichKeyDesc_Goto_SuperMethod="gs super method"
 nmap gs <action>(GotoSuperMethod)
-let g:WhichKeyDesc_Goto_Implementation="gi implementation"
 nmap gi <action>(GotoImplementation)
-let g:WhichKeyDesc_Goto_Declaration="gd declaration"
 nmap gd <action>(GotoDeclaration)
+nmap ge <action>(GotoNextError)
+nmap gE <action>(GotoPreviousError)
+nmap gl <action>(Back)
+nmap gh <action>(Forward)
 "nmap ghc <action>(CallHierarchy)
 "nmap ght <action>(TypeHierarchy)
 "nmap ghm <action>(MethodHierarchy)
 "nmap gp <action>(ParameterInfo)
 "nmap gf <action>(FileStructurePopup)
 "nmap gb <action>(JumpToLastChange)
-nmap ge <action>(GotoNextError)
-nmap gE <action>(GotoPreviousError)
-nmap gl <action>(Back)
-nmap gh <action>(Forward)
 
 
 " z命令
@@ -122,17 +119,13 @@ nmap <leader>g= <action>(Git.Add)
 
 
 " leader键映射
-let g:WhichKeyDesc_Leader2="<leader><leader> prefix"
-let g:WhichKeyDesc_Leader2_CodeMenu="<leader><leader>c codemenu"
 nmap <leader><leader>c <action>(CodeMenu)
-let g:WhichKeyDesc_Leader2_Generate="<leader><leader>g generate"
 nmap <leader><leader>g <action>(Generate)
-let g:WhichKeyDesc_Test="<leader><leader>t test"
 nmap <leader><leader>t <action>(GotoTest)
 nmap <leader><leader>f <action>(ToggleFullScreen)
 nmap <leader><leader>p <action>(TogglePresentationMode)
 
-let g:WhichKeyDesc_Terminal="<leader>'"
+let g:WhichKeyDesc_Terminal="<leader>' terminal"
 nmap <leader>' <action>(ActivateTerminalToolWindow)
 
 let g:WhichKeyDesc_Rename="<leader>r rename"
