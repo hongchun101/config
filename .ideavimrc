@@ -63,20 +63,13 @@ nmap ] gt
 " shift映射
 nmap H ^
 nmap L $
-nmap J A;<ESC>o
 nmap R <action>(RenameElement)
 
 " ctrl映射
-nmap <C-[> gT
-nmap <C-]> gt
+
 
 " art映射
-nmap <A-Right> <action>(NextSplitter)
-nmap <A-Left> <action>(PrevSplitter)
-nmap <C-Up> <action>(MethodUp)
-nmap <C-Down> <action>(MethodDown)
-nmap <C-Right> gt
-nmap <C-Left> gT
+
 
 " g命令
 nmap gn <action>(NextSplitter)
