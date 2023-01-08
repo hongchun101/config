@@ -55,10 +55,10 @@ vmap <leader>y <action>($EditorTranslateAction)
 
 "------------------nmap--------------"
 " 单键映射
-nmap ] <action>(GotoNextError)
-nmap [ <action>(GotoPreviousError)
 nnoremap = V
 nmap - <action>(OptimizeImports)
+nmap [ gT
+nmap ] gt
 
 " shift映射
 nmap H ^
@@ -71,8 +71,6 @@ nmap <C-[> gT
 nmap <C-]> gt
 
 " art映射
-nmap <A-[> <action>(Back)
-nmap <A-]> <action>(Forward)
 nmap <A-Right> <action>(NextSplitter)
 nmap <A-Left> <action>(PrevSplitter)
 nmap <C-Up> <action>(MethodUp)
@@ -97,6 +95,17 @@ nmap gd <action>(GotoDeclaration)
 "nmap gp <action>(ParameterInfo)
 "nmap gf <action>(FileStructurePopup)
 "nmap gb <action>(JumpToLastChange)
+nmap ge <action>(GotoNextError)
+nmap gE <action>(GotoPreviousError)
+nmap gl <action>(Back)
+nmap gh <action>(Forward)
+
+
+" z命令
+nmap zk <action>(MethodUp)
+nmap zj <action>(MethodDown)
+nmap zz <action>(ToggleLineBreakpoint)
+
 
 "---------------------------git---------------------------------"
 let g:WhichKeyDesc_Git="<leader>g git"
@@ -119,11 +128,6 @@ nmap <leader>g= <action>(Git.Add)
 "------------------------git end-----------------------------------"
 
 
-" z命令
-nnoremap zk zb
-nnoremap zj zt
-nmap zz <action>(ToggleLineBreakpoint)
-
 " leader键映射
 let g:WhichKeyDesc_Leader2="<leader><leader> prefix"
 let g:WhichKeyDesc_Leader2_CodeMenu="<leader><leader>c codemenu"
@@ -132,6 +136,8 @@ let g:WhichKeyDesc_Leader2_Generate="<leader><leader>g generate"
 nmap <leader><leader>g <action>(Generate)
 let g:WhichKeyDesc_Test="<leader><leader>t test"
 nmap <leader><leader>t <action>(GotoTest)
+nmap <leader><leader>f <action>(ToggleFullScreen)
+nmap <leader><leader>p <action>(TogglePresentationMode)
 
 let g:WhichKeyDesc_Terminal="<leader>'"
 nmap <leader>' <action>(ActivateTerminalToolWindow)
@@ -248,8 +254,8 @@ let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
 nmap <leader>fc <action>(CopyElement)
 
 
-let g:WhichKeyDesc_Bookmark="<leader>h"
-nmap <leader>h <action>(ToggleBookmark)
+nmap <leader>h <action>(ProblemsView.QuickFixes)
+
 "let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>; mnemonic bookmark"
 "nmap <leader>; <action>(ToggleBookmarkWithMnemonic)
 let g:WhichKeyDesc_Next_Bookmark="<leader>j"
@@ -258,22 +264,6 @@ let g:WhichKeyDesc_Previous_Bookmark="<leader>k"
 nmap <leader>k <action>(GotoPreviousBookmark)
 let g:WhichKeyDesc_Show_Bookmark="<leader>l"
 nmap <leader>l <action>(ShowBookmarks)
-
-
-let g:WhichKeyDesc_Idea="<leader>I idea"
-let g:WhichKeyDesc_Idea_Setting="<leader>Is setting"
-nmap <leader>Is <action>(ShowSettings)
-let g:WhichKeyDesc_Idea_ChangeView="<leader>Iv view mode"
-nmap <leader>Iv <action>(ChangeView)
-let g:WhichKeyDesc_Idea_FullScreen="<leader>If full screen"
-nmap <leader>If <action>(ToggleFullScreen)
-let g:WhichKeyDesc_Idea_Bar="<leader>Ib bar"
-let g:WhichKeyDesc_Idea_MainMenu="<leader>Ibm main menu"
-nmap <leader>Ibm <action>(ViewMainMenu)
-let g:WhichKeyDesc_Idea_Toolbar="<leader>Ibt toolbar"
-nmap <leader>Ibt <action>(ViewToolBar)
-let g:WhichKeyDesc_Idea_StatusBar="<leader>Ibs statusbar"
-nmap <leader>Ibs <action>(ViewStatusBar)
 
 
 let g:WhichKeyDesc_Maven="<leader>m maven"
@@ -331,15 +321,15 @@ nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
 let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
 nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
 
-let g:WhichKeyDesc_Tool="<leader>t tool"
-let g:WhichKeyDesc_Tool_JSON="<leader>tj json"
-nmap <leader>tj <action>(ActivateJsonParserToolWindow)
-let g:WhichKeyDesc_Tool_Explorer="<leader>tc open class"
-nmap <leader>tc <action>(Tool_External Tools_OpenClassInExplorer)
-let g:WhichKeyDesc_Tool_Nvim="<leader>tn nvim"
-nmap <leader>tn <action>(Tool_External Tools_nvim)
-let g:WhichKeyDesc_Tool_Todo="<leader>tt todo"
-nmap <leader>tt <action>(ActivateTODOToolWindow)
+"let g:WhichKeyDesc_Tool="<leader>t tool"
+"let g:WhichKeyDesc_Tool_JSON="<leader>tj json"
+"nmap <leader>tj <action>(ActivateJsonParserToolWindow)
+"let g:WhichKeyDesc_Tool_Explorer="<leader>tc open class"
+"nmap <leader>tc <action>(Tool_External Tools_OpenClassInExplorer)
+"let g:WhichKeyDesc_Tool_Nvim="<leader>tn nvim"
+"nmap <leader>tn <action>(Tool_External Tools_nvim)
+"let g:WhichKeyDesc_Tool_Todo="<leader>tt todo"
+"nmap <leader>tt <action>(ActivateTODOToolWindow)
 
 "nmap <leader>pa <action>(ActivateProjectToolWindow)
 "nmap <leader>pp <action>(RecentProjectListGroup)
