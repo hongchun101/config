@@ -243,14 +243,14 @@ nmap <leader>fc <action>(CopyElement)
 
 nmap <leader>h <action>(ProblemsView.QuickFixes)
 
-"let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>; mnemonic bookmark"
-"nmap <leader>; <action>(ToggleBookmarkWithMnemonic)
+let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>l ToggleBookmark"
+nmap <leader>l <action>(ToggleBookmark)
 let g:WhichKeyDesc_Next_Bookmark="<leader>j"
 nmap <leader>j <action>(GotoNextBookmark)
 let g:WhichKeyDesc_Previous_Bookmark="<leader>k"
 nmap <leader>k <action>(GotoPreviousBookmark)
-let g:WhichKeyDesc_Show_Bookmark="<leader>l"
-nmap <leader>l <action>(ShowBookmarks)
+let g:WhichKeyDesc_Show_Bookmark="<leader>;"
+nmap <leader>; <action>(ShowBookmarks)
 
 
 let g:WhichKeyDesc_Maven="<leader>m maven"
