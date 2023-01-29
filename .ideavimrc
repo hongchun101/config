@@ -166,35 +166,46 @@ nmap <leader>u <action>(UpdateRunningApplication)
 "nmap <leader>rc <action>(RunCoverage)
 "let g:WhichKeyDesc_Run_Stop="<leader>rs stop"
 "nmap <leader>rs <action>(Stop)
-
-"-----------------重构----------------------"
+"
+""" Refactor """
 let g:WhichKeyDesc_E="<leader>e"
 let g:WhichKeyDesc_I="<leader>i"
 let g:WhichKeyDesc_P="<leader>p"
 
 let g:WhichKeyDesc_Extract_Method="<leader>em method"
 nmap <leader>em <action>(ExtractMethod)
+vmap <leader>em <action>(ExtractMethod)
 let g:WhichKeyDesc_Class="<leader>ec class"
 nmap <leader>ec <action>(ExtractClass)
+vmap <leader>ec <action>(ExtractClass)
 let g:WhichKeyDesc_Interface="<leader>ei interface"
 nmap <leader>ei <action>(ExtractInterface)
+vmap <leader>ei <action>(ExtractInterface)
 let g:WhichKeyDesc_SuperClass="<leader>es super class"
 nmap <leader>es <action>(ExtractSuperclass)
+vmap <leader>es <action>(ExtractSuperclass)
 
 let g:WhichKeyDesc_Introduce_Variable="<leader>iv variable"
 nmap <leader>iv <action>(IntroduceVariable)
+vmap <leader>iv <action>(IntroduceVariable)
 let g:WhichKeyDesc_Introduce_Constant="<leader>ic constant"
 nmap <leader>ic <action>(IntroduceConstant)
+vmap <leader>ic <action>(IntroduceConstant)
 let g:WhichKeyDesc_Introduce_Field="<leader>if field"
 nmap <leader>if <action>(IntroduceField)
+vmap <leader>if <action>(IntroduceField)
 let g:WhichKeyDesc_Introduce_Parameter="<leader>ip parameter"
 nmap <leader>ip <action>(IntroduceParameter)
+vmap <leader>ip <action>(IntroduceParameter)
 let g:WhichKeyDesc_Inline="<leader>ii inline"
 nmap <leader>ii <action>(Inline)
+vmap <leader>ii <action>(Inline)
 let g:WhichKeyDesc_Introduce_FunctionParameter="<leader>ilp function parameter"
 nmap <leader>ilp <action>(IntroduceFunctionParameter)
+vmap <leader>ilp <action>(IntroduceFunctionParameter)
 let g:WhichKeyDesc_Introduce_FunctionVariable="<leader>ilv function variable"
 nmap <leader>ilv <action>(IntroduceFunctionVariable)
+vmap <leader>ilv <action>(IntroduceFunctionVariable)
 
 
 let g:WhichKeyDesc_MemberPushDown="<leader>pd push down"
