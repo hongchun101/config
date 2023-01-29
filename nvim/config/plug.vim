@@ -1,27 +1,30 @@
 call plug#begin('D:/Editor/nvimplug/plugged')
 
-Plug 'mhinz/vim-startify' " nvim首页
-"Plug 'glepnir/dashboard-nvim'
-" 主题 
+" dashboard
+Plug 'mhinz/vim-startify' 
+" theme
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'rakr/vim-one' 
 Plug 'glepnir/zephyr-nvim'
+" file explorer
+Plug 'preservim/nerdtree' " nerdtree
 
-Plug 'neoclide/coc.nvim', {'branch':'relase'} 
-
+" move
 Plug 'ggandor/leap.nvim'
 Plug 'ggandor/flit.nvim'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'justinmk/vim-sneak'
+"Plug 'unblevable/quick-scope'
+
+Plug 'neoclide/coc.nvim', {'branch':'relase'} 
 Plug 'sheerun/vim-polyglot' " 语法高亮
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'famiu/bufdelete.nvim'
 Plug 'rcarriga/nvim-notify' " 弹窗
 Plug 'liuchengxu/vim-which-key' " which key
-Plug 'preservim/nerdtree' " nerdtree
 
 Plug 'tpope/vim-surround'     
-Plug 'easymotion/vim-easymotion'
-"Plug 'justinmk/vim-sneak'
 Plug 'mg979/vim-visual-multi' " 多光标
 Plug 'kshenoy/vim-signature' " 书签可视化
 Plug 'rrethy/vim-illuminate' " 突出显示当前单词
@@ -37,7 +40,6 @@ Plug 'djoshea/vim-autoread'
 "Plug 'nvim-lua/plenary.nvim' " todo高亮
 "Plug 'folke/todo-comments.nvim'
 Plug 'godlygeek/tabular' "对齐
-Plug 'unblevable/quick-scope'
 
 "markdown
 Plug 'plasticboy/vim-markdown'
@@ -45,10 +47,6 @@ Plug 'iamcco/markdown-preview.vim' " markdown预览
 Plug 'ferrine/md-img-paste.vim' " markdown图片插入
 Plug 'mzlogin/vim-markdown-toc' "markdown目录
 
-" vue
-"Plug 'voldikss/vim-vue'
-Plug 'posva/vim-vue'
-Plug 'leafOfTree/vim-vue-plugin' " vue
 
 Plug 'junegunn/vim-easy-align'  " 对齐
 Plug 'junegunn/goyo.vim' " 纯净编辑模式
@@ -74,7 +72,7 @@ Plug 'xiyaowong/nvim-transparent' " 让vim透明
 Plug 'liuchengxu/vista.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'itchyny/vim-cursorword'  
-" 版本控制
+" git
 Plug 'airblade/vim-gitgutter' " git diff显示
 Plug 'f-person/git-blame.nvim'  " git blame
 Plug 'tpope/vim-rhubarb'
@@ -103,6 +101,10 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" 语言
 "Rust
 "Plug 'rust-lang/rust.vim'
+" vue
+"Plug 'voldikss/vim-vue'
+Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin' " vue
+call plug#end()
