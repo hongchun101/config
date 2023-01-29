@@ -29,46 +29,32 @@ set noeb
 set notimeout
 set timeoutlen=5000
 set which-key
-set sneak
+"set sneak
 set quickscope
+set ideajoin
 
 let mapleader=" "
 let g:WhichKey_FontSize = 22
+let g:qs_primary_color = '#5cff26'
+let g:qs_secondary_color = '#4d7fff'
+"let g:EasyMotion_override_acejump = 0
+"let g:sneak#label = 1
 
+""" nerdtree """
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 
-"------------------imap-------------------"
-inoremap jj <Esc>
-
-"------------------vmap-------------------"
-vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
-vnoremap H ^
-vnoremap L $
-vmap <leader>em <action>(ExtractMethod)
-vmap <leader>iv <action>(IntroduceVariable)
-vmap <leader>ic <action>(IntroduceConstant)
-vmap <leader>if <action>(IntroduceField)
-vmap <leader>ip <action>(IntroduceParameter)
-vmap <leader>ii <action>(Inline)
-vmap <leader>ilp <action>(IntroduceFunctionParameter)
-vmap <leader>ilv <action>(IntroduceFunctionVariable)
-vmap <leader>y <action>($EditorTranslateAction)
-
-"------------------nmap--------------"
-" 单键映射
-nnoremap = V
-nmap - <action>(OptimizeImports)
-nmap [ gT
-nmap ] gt
-
-" shift映射
+""" mappings """
 nmap H ^
 nmap L $
+nmap [ gT
+nmap ] gt
+nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
+vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
 
-" ctrl映射
 
-
-" art映射
+nnoremap = V
 
 
 " g命令
@@ -341,10 +327,14 @@ let g:WhichKeyDesc_Window_Hide="<leader>wm hide windows"
 nmap <leader>wm <action>(HideAllWindows)
 
 
-let g:WhichKeyDesc_Translate_Replace="<leader>Y"
-nmap <leader>Y <action>($TranslateAndReplaceAction)
-let g:WhichKeyDesc_Translate="<leader>y translate"
+""" translate """
 nmap <leader>y <action>($EditorTranslateAction)
+vmap <leader>y <action>($EditorTranslateAction)
+nmap <leader>Y <action>($TranslateAndReplaceAction)
 
-nmap <leader>zo <action>(ExpandAllRegions)
-nmap <leader>zc <action>(CollapseAllRegions)
+""" Expand and Collpase """
+nmap zo <action>(ExpandRegion)
+nmap zO <action>(ExpandAllRegions)
+nmap zc <action>(CollapseRegion)
+nmap zC <action>(CollapseAllRegions)
+
