@@ -52,8 +52,7 @@ nmap ] gt
 nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
-
-
+nmap s <Plug>(easymotion-s)
 nnoremap = V
 
 
@@ -81,7 +80,11 @@ nmap gh <action>(Forward)
 nmap zk <action>(MethodUp)
 nmap zj <action>(MethodDown)
 nmap zz <action>(ToggleLineBreakpoint)
+nmap zh <action>(ShowErrorDescription)
+nmap zf <action>(FileStructurePopup)
 
+let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
+nmap <leader>h <action>(ShowIntentionActions)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
@@ -117,15 +120,6 @@ nmap <leader>' <action>(ActivateTerminalToolWindow)
 
 let g:WhichKeyDesc_Rename="<leader>r rename"
 nmap <leader>r <action>(RenameElement)
-let g:WhichKeyDesc_Fix="<leader>x fix"
-nmap <leader>x <action>(ShowIntentionActions)
-
-let g:WhichKeyDesc_Buffer="<leader>b buffer"
-let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
-nmap <leader>bd :bdelete<CR>
-let g:WhichKeyDesc_Buffer="<leader>b buffer"
-let g:WhichKeyDesc_Buffer_W="<leader>bw save"
-nmap <leader>bw :w<CR>
 
 let g:WhichKeyDesc_CC="<leader>c copy/close"
 let g:WhichKeyDesc_CC_CopyFileName="<leader>cn copy filename"
@@ -153,10 +147,10 @@ let g:WhichKeyDesc_DR_Breakpoint="<leader>dv view breakpoints"
 nmap <leader>dv <action>(ViewBreakpoints)
 let g:WhichKeyDesc_DR_Config="<leader>dc config"
 nmap <leader>dc <action>(RunConfiguration)
-let g:WhichKeyDesc_DR_Update="<leader>du update"
-nmap <leader>du <action>(UpdateRunningApplication)
 let g:WhichKeyDesc_Update="<leader>u update"
 nmap <leader>u <action>(UpdateRunningApplication)
+let g:WhichKeyDesc_DR_Run="<leader>dr run"
+nmap <leader>dr <action>(Run)
 
 
 "let g:WhichKeyDesc_Run="<leader>r run"
@@ -213,14 +207,13 @@ nmap <leader>pd <action>(MemberPushDown)
 let g:WhichKeyDesc_MemberPullUp="<leader>pu pull up"
 nmap <leader>pu <action>(MembersPullUp)
 
-"---------------------------------------------------"
 
 let g:WhichKeyDesc_OverrideMethods="<leader>om override methods"
 nmap <leader>om <action>(OverrideMethods)
 let g:WhichKeyDesc_ImplementMethods="<leader>im implement methods"
 nmap <leader>im <action>(ImplementMethods)
-"nmap <leader>ts <action>(Actions.ActionsPlugin.GenerateToString)
 
+""" file find """
 let g:WhichKeyDesc_File="<leader>f file/find"
 let g:WhichKeyDesc_File_Menu="<leader>fm file menu"
 nmap <leader>fm <action>(FileMenu)
@@ -238,15 +231,13 @@ let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
 nmap <leader>fc <action>(CopyElement)
 
 
-nmap <leader>h <action>(ProblemsView.QuickFixes)
-
 let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>l ToggleBookmark"
 nmap <leader>l <action>(ToggleBookmark)
 let g:WhichKeyDesc_Next_Bookmark="<leader>j"
 nmap <leader>j <action>(GotoNextBookmark)
 let g:WhichKeyDesc_Previous_Bookmark="<leader>k"
 nmap <leader>k <action>(GotoPreviousBookmark)
-let g:WhichKeyDesc_Show_Bookmark="<leader>;"
+let g:WhichKeyDesc_Show_Bookmark="<leader>; ShowBookmarks"
 nmap <leader>; <action>(ShowBookmarks)
 
 
@@ -304,7 +295,15 @@ nmap <leader>ve :e ~\\.ideavimrc<CR>
 let g:WhichKeyDesc_Vim_Source="<leader>vs source"
 nmap <leader>vs :source ~\\.ideavimrc<CR>
 
+""" buffer window """
+let g:WhichKeyDesc_Buffer="<leader>b buffer"
 let g:WhichKeyDesc_Window="<leader>w window"
+
+let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
+nmap <leader>bd :bdelete<CR>
+let g:WhichKeyDesc_Buffer="<leader>b buffer"
+let g:WhichKeyDesc_Buffer_W="<leader>bw save"
+nmap <leader>bw :w<CR>
 let g:WhichKeyDesc_Window_Split="<leader>ws  split"
 nmap <leader>ws :sp<CR>
 let g:WhichKeyDesc_Window_VSplit="<leader>wv vsplit"
