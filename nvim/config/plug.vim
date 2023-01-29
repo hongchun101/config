@@ -21,7 +21,7 @@ Plug 'preservim/nerdtree' " nerdtree
 
 Plug 'tpope/vim-surround'     
 Plug 'easymotion/vim-easymotion'
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
 Plug 'mg979/vim-visual-multi' " 多光标
 Plug 'kshenoy/vim-signature' " 书签可视化
 Plug 'rrethy/vim-illuminate' " 突出显示当前单词
