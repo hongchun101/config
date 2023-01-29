@@ -250,27 +250,6 @@ let g:WhichKeyDesc_Maven_Search="<leader>ms search"
 nmap <leader>ms <action>(coderead.maven.search)
 
 
-let g:WhichKeyDesc_NN="<leader>n new"
-let g:WhichKeyDesc_NN_Java="<leader>nj java"
-nmap <leader>nj <action>(NewClass)
-let g:WhichKeyDesc_NN_Dir="<leader>nd directory"
-nmap <leader>nd <action>(NewDir)
-let g:WhichKeyDesc_NN_File="<leader>nf file"
-nmap <leader>nf <action>(NewFile)
-"let g:WhichKeyDesc_NN_Javascript="<leader>njs javascript"
-"nmap <leader>njs :action NewJavaScriptFile<CR>
-let g:WhichKeyDesc_NN_Javascript="<leader>ns scala"
-nmap <leader>ns :action Scala.NewClass<CR>
-let g:WhichKeyDesc_NN_Html="<leader>nh html"
-nmap <leader>nh <action>(NewHtmlFile)
-let g:WhichKeyDesc_NN_Xml="<leader>nx xml"
-nmap <leader>nx <action>(NewXml)
-let g:WhichKeyDesc_NN_Typescript="<leader>nt typescript"
-nmap <leader>nt <action>(NewTypeScriptFile)
-let g:WhichKeyDesc_NN_Kotlin="<leader>nk kotlin"
-nmap <leader>nk <action>(Kotlin.NewFile)
-
-
 let g:WhichKeyDesc_Project="<leader>p project"
 let g:WhichKeyDesc_Project_Close="<leader>pc close"
 nmap <leader>pc <action>(CloseProject)
@@ -327,7 +306,6 @@ let g:WhichKeyDesc_Window_Hide="<leader>wm hide windows"
 nmap <leader>wm <action>(HideAllWindows)
 
 
-""" translate """
 nmap <leader>y <action>($EditorTranslateAction)
 vmap <leader>y <action>($EditorTranslateAction)
 nmap <leader>Y <action>($TranslateAndReplaceAction)
