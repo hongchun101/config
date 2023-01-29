@@ -66,35 +66,31 @@ nmap gi <action>(GotoImplementation)
 nmap gd <action>(GotoDeclaration)
 nmap ge <action>(GotoNextError)
 nmap gE <action>(GotoPreviousError)
-nmap gl <action>(Back)
-nmap gh <action>(Forward)
-"nmap gc <action>(CallHierarchy)
-"nmap gt <action>(TypeHierarchy)
-"nmap gm <action>(MethodHierarchy)
-"nmap gp <action>(ParameterInfo)
-"nmap gf <action>(FileStructurePopup)
-"nmap gb <action>(JumpToLastChange)
-
+nmap gh <action>(Back)
+nmap gl <action>(Forward)
+nmap gf <action>(FileStructurePopup)
 
 " z命令
 nmap zk <action>(MethodUp)
 nmap zj <action>(MethodDown)
 nmap zz <action>(ToggleLineBreakpoint)
 nmap zh <action>(ShowErrorDescription)
-nmap zf <action>(FileStructurePopup)
 
 let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
 nmap <leader>h <action>(ShowIntentionActions)
+let g:WhichKeyDesc_Rename="<leader>r rename"
+nmap <leader>r <action>(RenameElement)
+let g:WhichKeyDesc_Terminal="<leader>' terminal"
+nmap <leader>' <action>(ActivateTerminalToolWindow)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
 nmap <leader><leader>g <action>(Generate)
-nmap <leader><leader>t <action>(GotoTest)
 nmap <leader><leader>f <action>(ToggleFullScreen)
 nmap <leader><leader>p <action>(TogglePresentationMode)
 
 
-"---------------------------git---------------------------------"
+""" Git """
 let g:WhichKeyDesc_Git="<leader>g git"
 let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
 nmap <leader>gr <action>(Vcs.RollbackChangedLines)
@@ -112,15 +108,9 @@ let g:WhichKeyDesc_Git_Branch="<leader>gb branches"
 nmap <leader>gb <action>(Vcs.ShowBranches)
 let g:WhichKeyDesc_Git_Add="<leader>g= add"
 nmap <leader>g= <action>(Git.Add)
-"------------------------git end-----------------------------------"
 
 
-let g:WhichKeyDesc_Terminal="<leader>' terminal"
-nmap <leader>' <action>(ActivateTerminalToolWindow)
-
-let g:WhichKeyDesc_Rename="<leader>r rename"
-nmap <leader>r <action>(RenameElement)
-
+""" Copy Close """
 let g:WhichKeyDesc_CC="<leader>c copy/close"
 let g:WhichKeyDesc_CC_CopyFileName="<leader>cn copy filename"
 nmap <leader>cn <action>(CopyFileName)
@@ -138,6 +128,8 @@ nmap <leader>ce <action>(CloseEditor)
 let g:WhichKeyDesc_CloseUnmodified="<leader>cu close unmodified"
 nmap <leader>cu <action>(CloseAllUnmodifiedEditors)
 
+
+""" Debug Run Test """
 let g:WhichKeyDesc_DR="<leader>d debug"
 let g:WhichKeyDesc_DR_Debug="<leader>dd debug"
 nmap <leader>dd <action>(Debug)
@@ -151,16 +143,8 @@ let g:WhichKeyDesc_Update="<leader>u update"
 nmap <leader>u <action>(UpdateRunningApplication)
 let g:WhichKeyDesc_DR_Run="<leader>dr run"
 nmap <leader>dr <action>(Run)
+nmap <leader>dt <action>(GotoTest)
 
-
-"let g:WhichKeyDesc_Run="<leader>r run"
-"let g:WhichKeyDesc_Run_Run="<leader>rr run"
-"nmap <leader>rr <action>(run)
-"let g:WhichKeyDesc_Run_Coverage="<leader>rc coverage"
-"nmap <leader>rc <action>(RunCoverage)
-"let g:WhichKeyDesc_Run_Stop="<leader>rs stop"
-"nmap <leader>rs <action>(Stop)
-"
 """ Refactor """
 let g:WhichKeyDesc_E="<leader>e"
 let g:WhichKeyDesc_I="<leader>i"
@@ -201,12 +185,10 @@ let g:WhichKeyDesc_Introduce_FunctionVariable="<leader>ilv function variable"
 nmap <leader>ilv <action>(IntroduceFunctionVariable)
 vmap <leader>ilv <action>(IntroduceFunctionVariable)
 
-
 let g:WhichKeyDesc_MemberPushDown="<leader>pd push down"
 nmap <leader>pd <action>(MemberPushDown)
 let g:WhichKeyDesc_MemberPullUp="<leader>pu pull up"
 nmap <leader>pu <action>(MembersPullUp)
-
 
 let g:WhichKeyDesc_OverrideMethods="<leader>om override methods"
 nmap <leader>om <action>(OverrideMethods)
@@ -231,6 +213,7 @@ let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
 nmap <leader>fc <action>(CopyElement)
 
 
+""" Bookmark """
 let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>l ToggleBookmark"
 nmap <leader>l <action>(ToggleBookmark)
 let g:WhichKeyDesc_Next_Bookmark="<leader>j"
@@ -241,9 +224,8 @@ let g:WhichKeyDesc_Show_Bookmark="<leader>; ShowBookmarks"
 nmap <leader>; <action>(ShowBookmarks)
 
 
+""" maven """
 let g:WhichKeyDesc_Maven="<leader>m maven"
-"let g:WhichKeyDesc_Maven_Window="<leader>ma maven window"
-"nmap <leader>ma <action>(ActivateMavenToolWindow)
 let g:WhichKeyDesc_Maven_Run="<leader>mm execute"
 nmap <leader>mm <action>(Maven.ExecuteGoal)
 let g:WhichKeyDesc_Maven_Import="<leader>mi reimport"
@@ -266,27 +248,12 @@ nmap <leader>pl <action>(NextProjectWindow)
 
 
 let g:WhichKeyDesc_Sonar="<leader>s sonar"
-"let g:WhichKeyDesc_Sonar_Tool="<leader>ss "
-"nmap <leader>ss <action>(ActivateSonaRLintToolWindow)
 let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
 nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
 let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
 nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
 let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
 nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
-
-"let g:WhichKeyDesc_Tool="<leader>t tool"
-"let g:WhichKeyDesc_Tool_JSON="<leader>tj json"
-"nmap <leader>tj <action>(ActivateJsonParserToolWindow)
-"let g:WhichKeyDesc_Tool_Explorer="<leader>tc open class"
-"nmap <leader>tc <action>(Tool_External Tools_OpenClassInExplorer)
-"let g:WhichKeyDesc_Tool_Nvim="<leader>tn nvim"
-"nmap <leader>tn <action>(Tool_External Tools_nvim)
-"let g:WhichKeyDesc_Tool_Todo="<leader>tt todo"
-"nmap <leader>tt <action>(ActivateTODOToolWindow)
-
-"nmap <leader>pa <action>(ActivateProjectToolWindow)
-"nmap <leader>pp <action>(RecentProjectListGroup)
 
 
 let g:WhichKeyDesc_Vim="<leader>v vim"
@@ -316,13 +283,14 @@ let g:WhichKeyDesc_Window_Hide="<leader>wm hide windows"
 nmap <leader>wm <action>(HideAllWindows)
 
 
+""" Translate """ 
 nmap <leader>y <action>($EditorTranslateAction)
 vmap <leader>y <action>($EditorTranslateAction)
 nmap <leader>Y <action>($TranslateAndReplaceAction)
+
 
 """ Expand and Collpase """
 nmap zo <action>(ExpandRegion)
 nmap zO <action>(ExpandAllRegions)
 nmap zc <action>(CollapseRegion)
 nmap zC <action>(CollapseAllRegions)
-
