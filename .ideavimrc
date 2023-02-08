@@ -80,8 +80,6 @@ let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
 nmap <leader>h <action>(ShowIntentionActions)
 let g:WhichKeyDesc_Rename="<leader>r rename"
 nmap <leader>r <action>(RenameElement)
-let g:WhichKeyDesc_Terminal="<leader>' terminal"
-nmap <leader>' <action>(ActivateTerminalToolWindow)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
@@ -92,21 +90,13 @@ nmap <leader><leader>p <action>(TogglePresentationMode)
 
 """ Git """
 let g:WhichKeyDesc_Git="<leader>g git"
-let g:WhichKeyDesc_Git_RollbackLines="<leader>gr rollback lines"
 nmap <leader>gr <action>(Vcs.RollbackChangedLines)
-let g:WhichKeyDesc_Git_Annotate="<leader>ga annotate"
 nmap <leader>ga <action>(Annotate)
-let g:WhichKeyDesc_Git_Commit_Window="<leader>gk commit window"
 nmap <leader>gk <action>(ActivateCommitToolWindow)
-let g:WhichKeyDesc_Git_Branch_Compare="<leader>gc compare whit branch"
 nmap <leader>gc <action>(Git.CompareWithBranch)
-let g:WhichKeyDesc_Git_History="<leader>gh history"
 nmap <leader>gh <action>(Vcs.ShowTabbedFileHistory)
-let g:WhichKeyDesc_Git_Log="<leader>gl log"
 nmap <leader>gl <action>(Vcs.Show.Log)
-let g:WhichKeyDesc_Git_Branch="<leader>gb branches"
 nmap <leader>gb <action>(Vcs.ShowBranches)
-let g:WhichKeyDesc_Git_Add="<leader>g= add"
 nmap <leader>g= <action>(Git.Add)
 
 
@@ -116,10 +106,10 @@ let g:WhichKeyDesc_CC_CopyFileName="<leader>cn copy filename"
 nmap <leader>cn <action>(CopyFileName)
 let g:WhichKeyDesc_CC_CopyReference="<leader>cr copy reference"
 nmap <leader>cr <action>(CopyReference)
-let g:WhichKeyDesc_CC_CopyAbsolutePath="<leader>cp copy abstract path"
-nmap <leader>cp <action>(CopyAbsolutePath)
 let g:WhichKeyDesc_CC_CopySource="<leader>cs copy source path"
 nmap <leader>cs <action>(CopySourceRootPath)
+let g:WhichKeyDesc_Project_Close="<leader>cp close"
+nmap <leader>cp <action>(CloseProject)
 
 let g:WhichKeyDesc_CloseAll="<leader>ca close all"
 nmap <leader>ca <action>(CloseAllEditorsButActive)
@@ -130,121 +120,80 @@ nmap <leader>cu <action>(CloseAllUnmodifiedEditors)
 
 
 """ Debug Run Test """
-let g:WhichKeyDesc_DR="<leader>d debug"
-let g:WhichKeyDesc_DR_Debug="<leader>dd debug"
+let g:WhichKeyDesc_DR="<leader>d debug/run/test"
 nmap <leader>dd <action>(Debug)
-let g:WhichKeyDesc_DR_Stop="<leader>ds stop"
 nmap <leader>ds <action>(Stop)
-let g:WhichKeyDesc_DR_Breakpoint="<leader>dv view breakpoints"
 nmap <leader>dv <action>(ViewBreakpoints)
-let g:WhichKeyDesc_DR_Config="<leader>dc config"
 nmap <leader>dc <action>(RunConfiguration)
-let g:WhichKeyDesc_Update="<leader>u update"
-nmap <leader>u <action>(UpdateRunningApplication)
-let g:WhichKeyDesc_DR_Run="<leader>dr run"
+nmap <leader>du <action>(UpdateRunningApplication)
 nmap <leader>dr <action>(Run)
 nmap <leader>dt <action>(GotoTest)
 
 """ Refactor """
-let g:WhichKeyDesc_E="<leader>e"
-let g:WhichKeyDesc_I="<leader>i"
-let g:WhichKeyDesc_P="<leader>p"
-
-let g:WhichKeyDesc_Extract_Method="<leader>em method"
 nmap <leader>em <action>(ExtractMethod)
 vmap <leader>em <action>(ExtractMethod)
-let g:WhichKeyDesc_Class="<leader>ec class"
 nmap <leader>ec <action>(ExtractClass)
 vmap <leader>ec <action>(ExtractClass)
-let g:WhichKeyDesc_Interface="<leader>ei interface"
 nmap <leader>ei <action>(ExtractInterface)
 vmap <leader>ei <action>(ExtractInterface)
-let g:WhichKeyDesc_SuperClass="<leader>es super class"
 nmap <leader>es <action>(ExtractSuperclass)
 vmap <leader>es <action>(ExtractSuperclass)
 
-let g:WhichKeyDesc_Introduce_Variable="<leader>iv variable"
 nmap <leader>iv <action>(IntroduceVariable)
 vmap <leader>iv <action>(IntroduceVariable)
-let g:WhichKeyDesc_Introduce_Constant="<leader>ic constant"
 nmap <leader>ic <action>(IntroduceConstant)
 vmap <leader>ic <action>(IntroduceConstant)
-let g:WhichKeyDesc_Introduce_Field="<leader>if field"
 nmap <leader>if <action>(IntroduceField)
 vmap <leader>if <action>(IntroduceField)
-let g:WhichKeyDesc_Introduce_Parameter="<leader>ip parameter"
 nmap <leader>ip <action>(IntroduceParameter)
 vmap <leader>ip <action>(IntroduceParameter)
-let g:WhichKeyDesc_Inline="<leader>ii inline"
 nmap <leader>ii <action>(Inline)
 vmap <leader>ii <action>(Inline)
-let g:WhichKeyDesc_Introduce_FunctionParameter="<leader>ilp function parameter"
 nmap <leader>ilp <action>(IntroduceFunctionParameter)
 vmap <leader>ilp <action>(IntroduceFunctionParameter)
-let g:WhichKeyDesc_Introduce_FunctionVariable="<leader>ilv function variable"
 nmap <leader>ilv <action>(IntroduceFunctionVariable)
 vmap <leader>ilv <action>(IntroduceFunctionVariable)
 
-let g:WhichKeyDesc_MemberPushDown="<leader>pd push down"
 nmap <leader>pd <action>(MemberPushDown)
-let g:WhichKeyDesc_MemberPullUp="<leader>pu pull up"
 nmap <leader>pu <action>(MembersPullUp)
 
-let g:WhichKeyDesc_OverrideMethods="<leader>om override methods"
 nmap <leader>om <action>(OverrideMethods)
-let g:WhichKeyDesc_ImplementMethods="<leader>im implement methods"
 nmap <leader>im <action>(ImplementMethods)
 
-""" file find """
-let g:WhichKeyDesc_File="<leader>f file/find"
-let g:WhichKeyDesc_File_Menu="<leader>fm file menu"
-nmap <leader>fm <action>(FileMenu)
-let g:WhichKeyDesc_File_History="<leader>fh file history"
-nmap <leader>fh <action>(LocalHistory.ShowHistory)
-let g:WhichKeyDesc_Find_Action="<leader>fa action"
-nmap <leader>fa <action>(GotoAction)
-let g:WhichKeyDesc_Find_Search="<leader>ff search everywhere"
-nmap <leader>ff <action>(SearchEverywhere)
-let g:WhichKeyDesc_File_Open="<leader>fo open in explorer"
-nmap <leader>fo <action>(RevealIn)
-let g:WhichKeyDesc_File_Move="<leader>fm file move"
-nmap <leader>fm <action>(Move)
-let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
-nmap <leader>fc <action>(CopyElement)
-
+nmap <leader>ms :action MakeStatic<CR>
+nmap <leader>mi :action ConvertToInsatnceMethod<CR>
+nmap <leader>cs :action ChangeSignature<CR>
 
 """ Bookmark """
-let g:WhichKeyDesc_Bookmark_Mnemonic="<leader>l ToggleBookmark"
 nmap <leader>l <action>(ToggleBookmark)
-let g:WhichKeyDesc_Next_Bookmark="<leader>j"
 nmap <leader>j <action>(GotoNextBookmark)
-let g:WhichKeyDesc_Previous_Bookmark="<leader>k"
 nmap <leader>k <action>(GotoPreviousBookmark)
-let g:WhichKeyDesc_Show_Bookmark="<leader>; ShowBookmarks"
 nmap <leader>; <action>(ShowBookmarks)
 
 
 """ maven """
-let g:WhichKeyDesc_Maven="<leader>m maven"
+let g:WhichKeyDesc_Maven="<leader>M maven"
 let g:WhichKeyDesc_Maven_Run="<leader>mm execute"
-nmap <leader>mm <action>(Maven.ExecuteGoal)
+nmap <leader>Mm <action>(Maven.ExecuteGoal)
 let g:WhichKeyDesc_Maven_Import="<leader>mi reimport"
-nmap <leader>mi <action>(Maven.Reimport)
+nmap <leader>Mi <action>(Maven.Reimport)
 let g:WhichKeyDesc_Maven_Search="<leader>ms search"
-nmap <leader>ms <action>(coderead.maven.search)
+nmap <leader>Ms <action>(coderead.maven.search)
 
 
-let g:WhichKeyDesc_Project="<leader>p project"
-let g:WhichKeyDesc_Project_Close="<leader>pc close"
-nmap <leader>pc <action>(CloseProject)
-let g:WhichKeyDesc_Project_New="<leader>pn new"
-nmap <leader>pn <action>(NewProject)
-let g:WhichKeyDesc_Project_Import="<leader>pi import"
-nmap <leader>pi <action>(ImportProject)
 let g:WhichKeyDesc_Project_Recent="<leader>po recent"
 nmap <leader>po <action>(RecentProjectListGroup)
-let g:WhichKeyDesc_Project_Next="<leader>pl next"
-nmap <leader>pl <action>(NextProjectWindow)
+
+""" file """
+let g:WhichKeyDesc_File="<leader>f file"
+let g:WhichKeyDesc_File_History="<leader>fh file history"
+nmap <leader>fh <action>(LocalHistory.ShowHistory)
+let g:WhichKeyDesc_Find_Action="<leader>fa action"
+nmap <leader>fa <action>(GotoAction)
+let g:WhichKeyDesc_File_Open="<leader>fo open in explorer"
+nmap <leader>fo <action>(RevealIn)
+let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
+nmap <leader>fc <action>(CopyElement)
 
 
 let g:WhichKeyDesc_Sonar="<leader>s sonar"
@@ -284,6 +233,8 @@ nmap <leader>wm <action>(HideAllWindows)
 
 
 """ Translate """ 
+let g:WhichKeyDesc_Y="<leader>y"
+let g:WhichKeyDesc_y="<leader>Y"
 nmap <leader>y <action>($EditorTranslateAction)
 vmap <leader>y <action>($EditorTranslateAction)
 nmap <leader>Y <action>($TranslateAndReplaceAction)
