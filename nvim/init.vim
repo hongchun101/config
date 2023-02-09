@@ -21,6 +21,9 @@ runtime ./plug/notify.vim
 runtime ./plug/quickrun.vim
 "runtime ./plug/treesitter.vim
 
+lua require('leap').add_default_mappings()
+lua require('flit')
+
 hi Search cterm=NONE ctermfg=black ctermbg=red
 
 colorscheme gruvbox-material

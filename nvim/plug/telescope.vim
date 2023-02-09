@@ -1,11 +1,12 @@
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>ft <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fs <cmd>lua require('telescope.builtin').search_history(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fs <cmd>lua require('telescope.builtin').marks(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fc <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown({}))<cr>
+"nnoremap <A-f> <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-g> <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-t> <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-b> <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-s> <cmd>lua require('telescope.builtin').search_history(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-m> <cmd>lua require('telescope.builtin').marks(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-f> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <A-h> <cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown({}))<cr>
+"nnoremap <A-n> <cmd>lua require('telescope.builtin').notify()<cr>
 
 "function telescope_buffer_dir()
     "return vim.fn.expand('%:p:h')

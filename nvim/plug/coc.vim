@@ -3,21 +3,17 @@ let g:coc_global_extensions = [
     \'coc-eslint',
     \'coc-vimlsp',
     \'coc-markdownlint',
-    \'coc-snippets',
     \'coc-pairs',
     \'coc-html',
     \'coc-git',
     \'coc-gitignore',
     \'coc-eslint',
+    \'coc-vue',
     \'coc-vetur',
     \'coc-css',
     \'coc-prettier',
     \'coc-python',
-    \'coc-clangd',
-    \'coc-go',
     \'coc-marketplace',
-    \'coc-rls',
-    \'coc-rust-analyzer',
     \'coc-lua']
 
 " Use tab for trigger completion with characters ahead and navigate.

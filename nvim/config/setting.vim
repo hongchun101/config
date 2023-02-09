@@ -20,6 +20,7 @@ set tags=tags
 set autowriteall
 set foldmethod=indent
 set shortmess+=c " 补全时 信息栏不显示
+set winaltkeys=no
 
 filetype plugin on
 filetype indent on
