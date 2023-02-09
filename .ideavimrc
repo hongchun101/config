@@ -45,6 +45,7 @@ nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
 """ mappings """
+nmap <A-e> <action>(RecentProjectListGroup)
 nmap H ^
 nmap L $
 nmap [ gT
@@ -181,8 +182,6 @@ let g:WhichKeyDesc_Maven_Search="<leader>ms search"
 nmap <leader>Ms <action>(coderead.maven.search)
 
 
-let g:WhichKeyDesc_Project_Recent="<leader>po recent"
-nmap <leader>po <action>(RecentProjectListGroup)
 
 """ file """
 let g:WhichKeyDesc_File="<leader>f file"
