@@ -7,6 +7,22 @@ local opt = {
     silent = true
 }
 
+map("i", "jj", "<ESC>", opt)
+map("n", "H", "^", opt)
+map("n", "L", "$", opt)
+map("v", "H", "^", opt)
+map("v", "L", "$", opt)
+
+map("n", "U", "<C-r>", opt)
+map("n", "gk", "<S-#>", opt)
+map("n", "gj", "<S-*>", opt)
+map("n", "gn", "<C-w>w", opt)
+
+
+map("n", "<leader>ve", ":e $MYVIMRC<CR>", opt)
+
+map("n", "<leader>as", ":Startify<CR>" ,opt)
+
 -- buffer页跳转
 map("n", "gT", ":bp<CR>", opt)
 map("n", "[", ":bp<CR>", opt)

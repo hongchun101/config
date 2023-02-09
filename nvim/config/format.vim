@@ -15,3 +15,6 @@ autocmd FileType vue setlocal tabstop=2 shiftwidth=0 softtabstop=4
 autocmd FileType jsp set filetype=html
 "autocmd FileType jsp RainbowToggleOff
 
+
+autocmd FileType vim,lua nnoremap <buffer> <leader>vs :source<CR>
+autocmd FileType rs nnoremap <buffer><silent> = :RustFmt<CR>

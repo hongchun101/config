@@ -1,3 +1,5 @@
+runtime ./core.vim
+
 lua require('core')
 lua require('keybindings')
 
@@ -6,7 +8,6 @@ runtime ./config/plug.vim
 runtime ./config/markdown.vim
 runtime ./config/git.vim
 runtime ./config/format.vim
-runtime ./config/keymaps.vim
 
 runtime ./plug/quickrun.vim
 runtime ./plug/coc.vim
@@ -53,12 +54,5 @@ function! NumberToggle()
     endif
 endfunction
 
-set winaltkeys=no
-if has('nvim')
-  try
-    call rpcnotify(1, 'Gui', 'Option', 'Tabline', 0)
-    call rpcnotify(1, 'Gui', 'Option', 'Popupmenu', 0)
-  catch
-  endtry
-endif
+
 
