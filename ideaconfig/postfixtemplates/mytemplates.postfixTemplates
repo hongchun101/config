@@ -1,0 +1,20 @@
+# 后缀补全模板
+.success: ResponseResult.success
+    NON_VOID -> return ResponseResult.success($expr$);
+.fail: ResponseResult.fail
+    NON_VOID -> return ResponseResult.fail($expr$);
+
+.ie: isEmpty
+    java.util.Collection -> cn.hutool.core.collection.CollUtil.isEmpty($expr$)
+    java.util.Map -> cn.hutool.core.collection.CollUtil.isEmpty($expr$)
+    java.lang.String -> cn.hutool.core.util.StrUtil.isEmpty($expr$)
+.ine: isNotEmpty
+    java.util.Collection -> cn.hutool.core.collection.CollUtil.isNotEmpty($expr$)
+    java.util.Map -> cn.hutool.core.collection.CollUtil.isNotEmpty($expr$)
+    java.lang.String -> cn.hutool.core.util.StrUtil.isNotEmpty($expr$)
+.eq: equals
+    java.lang.String -> cn.hutool.core.util.StrUtil.equals($expr$, $end$)
+.partition : partition
+    java.util.List -> com.google.common.collect.Lists.partition($expr$, $end$)
+    java.util.Set -> com.google.common.collect.Lists.partition(new ArrayList<>($expr$), $end$)
+
