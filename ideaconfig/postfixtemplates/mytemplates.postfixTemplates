@@ -12,7 +12,7 @@
     java.util.Collection -> cn.hutool.core.collection.CollUtil.isNotEmpty($expr$)
     java.util.Map -> cn.hutool.core.collection.CollUtil.isNotEmpty($expr$)
     java.lang.String -> cn.hutool.core.util.StrUtil.isNotEmpty($expr$)
-.eq: equals
+.equal: equals
     java.lang.String -> cn.hutool.core.util.StrUtil.equals($expr$, $end$)
 .partition : partition
     java.util.List -> com.google.common.collect.Lists.partition($expr$, $end$)
