@@ -6,7 +6,7 @@
 
 # if
 .eq : if equals
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.equals($expr$, $end$)) {}
+    java.lang.String -> if (cn.hutool.core.util.StrUtil.equals($expr$, $val1$)) {$end$}
 .ie : if empty
     java.util.Collection -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$)) {$end$}
     java.util.Map -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$)) {$end$}
@@ -20,36 +20,15 @@
 .inn : if not null
     NON_VOID -> if ($expr$ != null) {$end$}
 
-.eqa : if equals and
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.equals($expr$, $end$) && $end$) {}
-.iea : if empty and
-    java.util.Collection -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$) && $end$) {}
-    java.util.Map -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$) && $end$) {}
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.isEmpty($expr$) && $end$) {}
-.inea : if not empty and
-    java.util.Collection -> if (cn.hutool.core.collection.CollUtil.isNotEmpty($expr$) && $end$) {}
-    java.util.Map -> if (cn.hutool.core.collection.CollUtil.isNotEmpty($expr$) && $end$) {}
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.isNotEmpty($expr$) &&  $end$) {}
-.ina : if null and
-    NON_VOID -> if ($expr$ == null && $end$) {}
-.inna : if not null and
-    NON_VOID -> if ($expr$ != null && $end$) {}
-
-.eqo : if equals or
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.equals($expr$, $end$) || $end$) {}
-.ieo : if empty or
-    java.util.Collection -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$) || $end$) {}
-    java.util.Map -> if (cn.hutool.core.collection.CollUtil.isEmpty($expr$) || $end$) {}
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.isEmpty($expr$) || $end$) {}
-.ineo : if not empty or
-    java.util.Collection -> if (cn.hutool.core.collection.CollUtil.isNotEmpty($expr$) || $end$) {}
-    java.util.Map -> if (cn.hutool.core.collection.CollUtil.isNotEmpty($expr$) || $end$) {}
-    java.lang.String -> if (cn.hutool.core.util.StrUtil.isNotEmpty($expr$) || $end$) {}
-.ino : if null or
-    NON_VOID -> if ($expr$ == null || $end$) {}
-.inno : if not null or
-    NON_VOID -> if ($expr$ != null || $end$) {}
-
 .partition : partition
     java.util.List -> com.google.common.collect.Lists.partition($expr$, $end$)
     java.util.Set -> com.google.common.collect.Lists.partition(new ArrayList<>($expr$), $end$)
+
+# $var:suggestVariableName()$ 建议变量名
+.list : new List
+    ANY -> java.util.List<$expr$> $end$ = new java.util.ArrayList<>();
+.set : new Set
+    ANY -> java.util.Set<$expr$> $end$ = new java.util.HashSet<>();
+.map : new Map
+    ANY -> java.util.Map<$expr$, $generic$> $end$ = new java.util.HashMap<>();
+
