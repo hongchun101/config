@@ -276,9 +276,9 @@ WinTopToggle(w) {
     Winset, AlwaysOnTop, Toggle, ahk_id %w%
     WinGet, ExStyle, ExStyle, ahk_id %w%
     if (ExStyle & 0x8)  ; 0x8 为 WS_EX_TOPMOST.在WinGet的帮助中
-        oTop = 置顶
+        oTop = top
     else
-        oTop = 取消置顶
+        oTop = untop
     tooltip %oTitle% %oTop%
     SetTimer, RemoveToolTip, 5000
     return
@@ -287,3 +287,4 @@ WinTopToggle(w) {
     SetTimer, RemoveToolTip, Off
     ToolTip
     return
+}
