@@ -26,12 +26,15 @@ set scrolloff=1
 set syntax=on
 set ruler
 set noeb
-set notimeout
+"set notimeout
 set timeoutlen=5000
 set which-key
 "set sneak
-set quickscope
+
 set ideajoin
+let g:argtextobj_pairs="[:],(:),<:>"
+
+let g:which_key_timeout = 1000   " 设置延迟展示时间（以毫秒为单位）
 
 let mapleader=" "
 let g:WhichKey_FontSize = 22
@@ -41,23 +44,32 @@ let g:qs_secondary_color = '#4d7fff'
 "let g:sneak#label = 1
 
 """ nerdtree """
-nmap <leader>nt :NERDTreeToggle<CR>
-nmap <leader>nf :NERDTreeFind<CR>
+nmap <leader>o :NERDTreeFind<CR>
 nmap <leader>nn <action>(NewClass)
+
+nmap <leader>p <Plug>ReplaceWithRegisterOperator
+nmap <leader>pp <Plug>ReplaceWithRegisterLine
+xmap <leader>p  <Plug>ReplaceWithRegisterVisual
 
 """ mappings """
 nmap <A-e> <action>(RecentProjectListGroup)
 nmap H ^
 nmap L $
+vmap H ^
+vmap L $
+vnoremap J :action MoveLineDown<CR>
+vnoremap K :action MoveLineUp<CR>
 nmap [ gT
 nmap ] gt
 nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
-nmap s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-s2)
+nmap f<space> f.
 nnoremap = V
-
-
+vmap p P
+"vmap v <action>(EditorSelectWord)
+"vmap V <action>(EditorUnSelectWord)
 " g命令
 nnoremap ga '.
 nmap gn <action>(NextSplitter)
@@ -70,14 +82,14 @@ nmap ge <action>(GotoNextError)
 nmap gE <action>(GotoPreviousError)
 nmap gh <action>(Back)
 nmap gl <action>(Forward)
-nmap gf <action>(FileStructurePopup)
 
 " z命令
 nmap zk <action>(MethodUp)
 nmap zj <action>(MethodDown)
 nmap zz <action>(ToggleLineBreakpoint)
-nmap zh <action>(ShowErrorDescription)
 nmap zg <action>(Generate)
+nnoremap zh 50zh
+nnoremap zl 50zl
 
 let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
 nmap <leader>h <action>(ShowIntentionActions)
@@ -86,8 +98,12 @@ nmap <leader>r <action>(RenameElement)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
-nmap <leader><leader>f <action>(ToggleFullScreen)
-nmap <leader><leader>p <action>(TogglePresentationMode)
+nmap <leader>tj <action>(ActivateJenkinsToolWindow)
+
+""" arthas """
+let g:WhichKeyDesc_Arthas="<leader>a arthas"
+nmap <leader>at <action>(ArthasTrace)
+nmap <leader>aw <action>(ArthasWatch)
 
 
 """ Git """
@@ -103,27 +119,17 @@ nmap <leader>g= <action>(Git.Add)
 
 
 """ Copy Close """
-let g:WhichKeyDesc_CC="<leader>c copy/close"
-let g:WhichKeyDesc_CC_CopyFileName="<leader>cn copy filename"
-nmap <leader>cn <action>(CopyFileName)
-let g:WhichKeyDesc_CC_CopyReference="<leader>cr copy reference"
-nmap <leader>cr <action>(CopyReference)
-let g:WhichKeyDesc_CC_CopySource="<leader>cs copy source path"
-nmap <leader>cs <action>(CopySourceRootPath)
-let g:WhichKeyDesc_Project_Close="<leader>cp close"
-nmap <leader>cp <action>(CloseProject)
-
-let g:WhichKeyDesc_CloseAll="<leader>ca close all"
-nmap <leader>ca <action>(CloseAllEditorsButActive)
-let g:WhichKeyDesc_CloseEditor="<leader>ce close current"
-nmap <leader>ce <action>(CloseEditor)
-let g:WhichKeyDesc_CloseUnmodified="<leader>cu close unmodified"
-nmap <leader>cu <action>(CloseAllUnmodifiedEditors)
+"let g:WhichKeyDesc_CC="<leader>c copy/close"
+nmap <leader>Cn <action>(CopyFileName)
+nmap <leader>Cf <action>(CopyReference)
+nmap <leader>Cs <action>(CopySourceRootPath)
+nmap <leader>Cp <action>(CloseProject)
 
 
 """ Debug Run Test """
 let g:WhichKeyDesc_DR="<leader>d debug/run/test"
 nmap <leader>dd <action>(Debug)
+nmap <leader>dj <action>(JRebel Debug)
 nmap <leader>ds <action>(Stop)
 nmap <leader>dv <action>(ViewBreakpoints)
 nmap <leader>dc <action>(RunConfiguration)
@@ -131,44 +137,125 @@ nmap <leader>du <action>(UpdateRunningApplication)
 nmap <leader>dr <action>(Run)
 nmap <leader>dt <action>(GotoTest)
 
-""" Refactor """
-nmap <leader>em <action>(ExtractMethod)
-vmap <leader>em <action>(ExtractMethod)
-nmap <leader>ec <action>(ExtractClass)
-vmap <leader>ec <action>(ExtractClass)
-nmap <leader>ei <action>(ExtractInterface)
-vmap <leader>ei <action>(ExtractInterface)
-nmap <leader>es <action>(ExtractSuperclass)
-vmap <leader>es <action>(ExtractSuperclass)
+""" lsp """
+nmap <leader>eh <action>(MoveElementLeft)
+nmap <leader>el <action>(MoveElementRight)
 
-nmap <leader>iv <action>(IntroduceVariable)
-vmap <leader>iv <action>(IntroduceVariable)
-nmap <leader>ic <action>(IntroduceConstant)
-vmap <leader>ic <action>(IntroduceConstant)
-nmap <leader>if <action>(IntroduceField)
-vmap <leader>if <action>(IntroduceField)
-nmap <leader>ip <action>(IntroduceParameter)
-vmap <leader>ip <action>(IntroduceParameter)
+nmap <leader>lo <action>(OverrideMethods)
+nmap <leader>li <action>(ImplementMethods)
+
+nmap <leader>lS <action>(ActivateStructureToolWindow)
+nmap <leader>ls <action>(FileStructurePopup)
+
+nmap <leader>lm <action>(ExtractMethod)
+vmap <leader>lm <action>(ExtractMethod)
+nmap <leader>lc <action>(IntroduceConstant)
+vmap <leader>lc <action>(IntroduceConstant)
+nmap <leader>lf <action>(IntroduceField)
+vmap <leader>lf <action>(IntroduceField)
+nmap <leader>lp <action>(IntroduceParameter)
+vmap <leader>lp <action>(IntroduceParameter)
+nmap <leader>lv <action>(IntroduceVariable)
+vmap <leader>lv <action>(IntroduceVariable)
 nmap <leader>ii <action>(Inline)
 vmap <leader>ii <action>(Inline)
-nmap <leader>ilp <action>(IntroduceFunctionParameter)
-vmap <leader>ilp <action>(IntroduceFunctionParameter)
-nmap <leader>ilv <action>(IntroduceFunctionVariable)
-vmap <leader>ilv <action>(IntroduceFunctionVariable)
 
-nmap <leader>pd <action>(MemberPushDown)
-nmap <leader>pu <action>(MembersPullUp)
+nmap <leader>ld <action>(MemberPushDown)
+nmap <leader>lu <action>(MembersPullUp)
 
-nmap <leader>om <action>(OverrideMethods)
-nmap <leader>im <action>(ImplementMethods)
+nmap <leader>lC <action>(ExtractClass)
+vmap <leader>lC <action>(ExtractClass)
+nmap <leader>lI <action>(ExtractInterface)
+vmap <leader>lI <action>(ExtractInterface)
+nmap <leader>lP <action>(ExtractSuperclass)
+vmap <leader>lP <action>(ExtractSuperclass)
 
-"nmap <leader>ms :action MakeStatic<CR>
-"nmap <leader>mi :action ConvertToInsatnceMethod<CR>
-"nmap <leader>cs :action ChangeSignature<CR>
+
+nmap <leader>lLp <action>(IntroduceFunctionParameter)
+vmap <leader>lLp <action>(IntroduceFunctionParameter)
+nmap <leader>lLv <action>(IntroduceFunctionVariable)
+vmap <leader>lLv <action>(IntroduceFunctionVariable)
+
+
+
+""" maven """
+let g:WhichKeyDesc_Maven="<leader>M maven"
+nmap <leader>Mm <action>(Maven.ExecuteGoal)
+nmap <leader>Mi <action>(Maven.Reimport)
+nmap <leader>Ms <action>(coderead.maven.search)
+
+
+
+""" file """
+let g:WhichKeyDesc_File="<leader>f file"
+let g:WhichKeyDesc_File_History="<leader>fh file history"
+nmap <leader>fh <action>(LocalHistory.ShowHistory)
+let g:WhichKeyDesc_Find_Action="<leader>fa action"
+nmap <leader>fa <action>(GotoAction)
+let g:WhichKeyDesc_File_Open="<leader>fo open in explorer"
+nmap <leader>fo <action>(RevealIn)
+let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
+nmap <leader>fc <action>(CopyElement)
+
+
+let g:WhichKeyDesc_Sonar="<leader>s sonar"
+let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
+nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
+let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
+nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
+let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
+nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
+
+
+let g:WhichKeyDesc_Vim="<leader>v vim"
+let g:WhichKeyDesc_Vim_EditVimrc="<leader>ve edit vimrc"
+nmap <leader>ve :e ~\\.ideavimrc<CR>
+let g:WhichKeyDesc_Vim_Source="<leader>vs source"
+nmap <leader>vs :source ~\\.ideavimrc<CR>
+
+""" buffer window """
+let g:WhichKeyDesc_Buffer="<leader>b buffer"
+nmap <leader>bc <action>(CloseAllEditorsButActive)
+nmap <leader>bl <action>(CloseAllToTheLeft)
+nmap <leader>br <action>(CloseAllToTheRight)
+nmap <leader>bu <action>(CloseAllUnmodifiedEditors)
+
+let g:WhichKeyDesc_Window="<leader>w window"
+
+let g:WhichKeyDesc_Buffer_W="<leader>w save"
+nmap <leader>w :w<CR>
+
+let g:WhichKeyDesc_Buffer_Delete="<leader>c close buffer"
+nmap <leader>c :bdelete<CR>
+let g:WhichKeyDesc_Buffer="<leader>b buffer"
+
+
+""" Translate """ 
+let g:WhichKeyDesc_Y="<leader>y"
+let g:WhichKeyDesc_y="<leader>Y"
+nmap <leader>y <action>($EditorTranslateAction)
+vmap <leader>y <action>($EditorTranslateAction)
+nmap <leader>Y <action>($TranslateAndReplaceAction)
+
+
+    """ UI/UX """
+let g:WhichKeyDesc_U="<leader>u UI/UX"
+let g:WhichKeyDesc_UF="<leader>uf toggle full screen"
+let g:WhichKeyDesc_UP="<leader>up toggle presentation mode "
+
+nmap <leader>uf <action>(ToggleFullScreen)
+nmap <leader>up <action>(TogglePresentationMode)
+
+
+""" Expand and Collapse """
+nmap zo <action>(ExpandRegion)
+nmap zO <action>(ExpandAllRegions)
+nmap zc <action>(CollapseRegion)
+nmap zC <action>(CollapseAllRegions)
+
 
 """ Bookmark """
-nmap <leader>l <action>(ShowBookmarks)
-nmap <leader>; <action>(ToggleBookmark)
+nmap <leader>; <action>(ShowBookmarks)
 nmap <leader>m0 <action>(ToggleBookmark0)
 nmap <leader>m1 <action>(ToggleBookmark1)
 nmap <leader>m2 <action>(ToggleBookmark2)
@@ -243,77 +330,3 @@ nmap mw <action>(GotoBookmarkW)
 nmap mx <action>(GotoBookmarkX)
 nmap my <action>(GotoBookmarkY)
 nmap mz <action>(GotoBookmarkZ)
-
-
-""" maven """
-let g:WhichKeyDesc_Maven="<leader>M maven"
-let g:WhichKeyDesc_Maven_Run="<leader>mm execute"
-nmap <leader>Mm <action>(Maven.ExecuteGoal)
-let g:WhichKeyDesc_Maven_Import="<leader>mi reimport"
-nmap <leader>Mi <action>(Maven.Reimport)
-let g:WhichKeyDesc_Maven_Search="<leader>ms search"
-nmap <leader>Ms <action>(coderead.maven.search)
-
-
-
-""" file """
-let g:WhichKeyDesc_File="<leader>f file"
-let g:WhichKeyDesc_File_History="<leader>fh file history"
-nmap <leader>fh <action>(LocalHistory.ShowHistory)
-let g:WhichKeyDesc_Find_Action="<leader>fa action"
-nmap <leader>fa <action>(GotoAction)
-let g:WhichKeyDesc_File_Open="<leader>fo open in explorer"
-nmap <leader>fo <action>(RevealIn)
-let g:WhichKeyDesc_File_Copy="<leader>fc file copy"
-nmap <leader>fc <action>(CopyElement)
-
-
-let g:WhichKeyDesc_Sonar="<leader>s sonar"
-let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
-nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
-let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
-nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
-let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
-nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
-
-
-let g:WhichKeyDesc_Vim="<leader>v vim"
-let g:WhichKeyDesc_Vim_EditVimrc="<leader>ve edit vimrc"
-nmap <leader>ve :e ~\\.ideavimrc<CR>
-let g:WhichKeyDesc_Vim_Source="<leader>vs source"
-nmap <leader>vs :source ~\\.ideavimrc<CR>
-
-""" buffer window """
-let g:WhichKeyDesc_Buffer="<leader>b buffer"
-let g:WhichKeyDesc_Window="<leader>w window"
-
-let g:WhichKeyDesc_Buffer_Delete="<leader>bd close"
-nmap <leader>bd :bdelete<CR>
-let g:WhichKeyDesc_Buffer="<leader>b buffer"
-let g:WhichKeyDesc_Buffer_W="<leader>bw save"
-nmap <leader>bw :w<CR>
-let g:WhichKeyDesc_Window_Split="<leader>ws  split"
-nmap <leader>ws :sp<CR>
-let g:WhichKeyDesc_Window_VSplit="<leader>wv vsplit"
-nmap <leader>wv :vs<CR>
-let g:WhichKeyDesc_Window_Close="<leader>wc close"
-nmap <leader>wc <C-w>c<CR>
-let g:WhichKeyDesc_Window_CloseOther="<leader>wo close other"
-nmap <leader>wo <C-w>o<CR>
-let g:WhichKeyDesc_Window_Hide="<leader>wm hide windows"
-nmap <leader>wm <action>(HideAllWindows)
-
-
-""" Translate """ 
-let g:WhichKeyDesc_Y="<leader>y"
-let g:WhichKeyDesc_y="<leader>Y"
-nmap <leader>y <action>($EditorTranslateAction)
-vmap <leader>y <action>($EditorTranslateAction)
-nmap <leader>Y <action>($TranslateAndReplaceAction)
-
-
-""" Expand and Collapse """
-nmap zo <action>(ExpandRegion)
-nmap zO <action>(ExpandAllRegions)
-nmap zc <action>(CollapseRegion)
-nmap zC <action>(CollapseAllRegions)
