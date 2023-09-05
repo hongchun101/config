@@ -330,3 +330,8 @@ nmap mw <action>(GotoBookmarkW)
 nmap mx <action>(GotoBookmarkX)
 nmap my <action>(GotoBookmarkY)
 nmap mz <action>(GotoBookmarkZ)
+
+" idea快捷键中需设置Up/Down为<C-k>/<C-j>
+sethandler <C-j> a:vim i:vim
+sethandler <C-k> a:vim i:vim
+
