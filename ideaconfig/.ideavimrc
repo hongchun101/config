@@ -242,9 +242,13 @@ nmap <leader>Y <action>($TranslateAndReplaceAction)
 let g:WhichKeyDesc_U="<leader>u UI/UX"
 let g:WhichKeyDesc_UF="<leader>uf toggle full screen"
 let g:WhichKeyDesc_UP="<leader>up toggle presentation mode "
+let g:WhichKeyDesc_UT="<leader>up toggle tool bar"
+let g:WhichKeyDesc_US="<leader>us toggle status bar"
 
 nmap <leader>uf <action>(ToggleFullScreen)
 nmap <leader>up <action>(TogglePresentationMode)
+nmap <leader>ut <action>(ViewToolButtons)
+nmap <leader>us <action>(ViewStatusBar)
 
 
 """ Expand and Collapse """
