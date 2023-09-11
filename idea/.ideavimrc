@@ -98,7 +98,6 @@ nmap <leader>r <action>(RenameElement)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
-nmap <leader>tj <action>(ActivateJenkinsToolWindow)
 
 """ arthas """
 let g:WhichKeyDesc_Arthas="<leader>a arthas"
@@ -229,6 +228,8 @@ let g:WhichKeyDesc_Buffer_Delete="<leader>c close buffer"
 nmap <leader>c :bdelete<CR>
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 
+let g:WhichKeyDesc_Tool="<leader>t tool"
+nmap <leader>tj <action>(ActivateJenkinsToolWindow)
 
 """ Translate """ 
 let g:WhichKeyDesc_Y="<leader>y"
