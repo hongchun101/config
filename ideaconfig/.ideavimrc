@@ -119,11 +119,11 @@ nmap <leader>g= <action>(Git.Add)
 
 
 """ Copy Close """
-"let g:WhichKeyDesc_CC="<leader>c copy/close"
-nmap <leader>Cn <action>(CopyFileName)
-nmap <leader>Cf <action>(CopyReference)
-nmap <leader>Cs <action>(CopySourceRootPath)
-nmap <leader>Cp <action>(CloseProject)
+let g:WhichKeyDesc_CC="<leader><leader>c copy/close"
+nmap <leader><leader>cn <action>(CopyFileName)
+nmap <leader><leader>cr <action>(CopyReference)
+nmap <leader><leader>cs <action>(CopySourceRootPath)
+nmap <leader><leader>cp <action>(CloseProject)
 
 
 """ Debug Run Test """
@@ -179,10 +179,10 @@ vmap <leader>lLv <action>(IntroduceFunctionVariable)
 
 
 """ maven """
-let g:WhichKeyDesc_Maven="<leader>M maven"
-nmap <leader>Mm <action>(Maven.ExecuteGoal)
-nmap <leader>Mi <action>(Maven.Reimport)
-nmap <leader>Ms <action>(coderead.maven.search)
+let g:WhichKeyDesc_Maven="<leader><leader>m maven"
+nmap <leader><leader>mm <action>(Maven.ExecuteGoal)
+nmap <leader><leader>mi <action>(Maven.Reimport)
+nmap <leader><leader>ms <action>(coderead.maven.search)
 
 
 
