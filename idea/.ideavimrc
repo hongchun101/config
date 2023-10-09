@@ -43,10 +43,6 @@ let g:qs_secondary_color = '#4d7fff'
 "let g:EasyMotion_override_acejump = 0
 "let g:sneak#label = 1
 
-""" nerdtree """
-nmap <leader>o :NERDTreeFind<CR>
-nmap <leader>nn <action>(NewClass)
-
 nmap <leader>p <Plug>ReplaceWithRegisterOperator
 nmap <leader>pp <Plug>ReplaceWithRegisterLine
 xmap <leader>p  <Plug>ReplaceWithRegisterVisual
@@ -59,8 +55,10 @@ vmap H ^
 vmap L $
 vnoremap J :action MoveLineDown<CR>
 vnoremap K :action MoveLineUp<CR>
-nmap [ gT
-nmap ] gt
+nmap [ <action>(Back)
+nmap ] <action>(Forward)
+nmap { gt
+nmap } gT
 nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
@@ -70,6 +68,7 @@ nnoremap = V
 vmap p P
 "vmap v <action>(EditorSelectWord)
 "vmap V <action>(EditorUnSelectWord)
+
 " g命令
 nnoremap ga '.
 nmap gn <action>(NextSplitter)
@@ -80,8 +79,7 @@ nmap gi <action>(GotoImplementation)
 nmap gd <action>(GotoDeclaration)
 nmap ge <action>(GotoNextError)
 nmap gE <action>(GotoPreviousError)
-nmap gh <action>(Back)
-nmap gl <action>(Forward)
+nmap gh <action>(QuickJavaDoc)
 
 " z命令
 nmap zk <action>(MethodUp)
@@ -98,6 +96,14 @@ nmap <leader>r <action>(RenameElement)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
+
+""" nerdtree """
+let g:WhichKeyDesc_Nerdtree="<leader>o NerdTree"
+nmap <leader>o :NERDTreeFind<CR>
+
+nmap <leader>nn <action>(NewClass)
+nmap <leader>nd <action>(NewDir)
+nmap <leader>nf <action>(NewFile)
 
 """ arthas """
 let g:WhichKeyDesc_Arthas="<leader>a arthas"
@@ -243,11 +249,14 @@ nmap <leader>Y <action>($TranslateAndReplaceAction)
 let g:WhichKeyDesc_U="<leader>u UI/UX"
 let g:WhichKeyDesc_UF="<leader>uf toggle full screen"
 let g:WhichKeyDesc_UP="<leader>up toggle presentation mode "
+let g:WhichKeyDesc_UC="<leader>uc toggle compact mode "
 let g:WhichKeyDesc_UT="<leader>up toggle tool bar"
 let g:WhichKeyDesc_US="<leader>us toggle status bar"
 
+
 nmap <leader>uf <action>(ToggleFullScreen)
 nmap <leader>up <action>(TogglePresentationMode)
+nmap <leader>uc <action>(ToggleCompactMode)
 nmap <leader>ut <action>(ViewToolButtons)
 nmap <leader>us <action>(ViewStatusBar)
 
