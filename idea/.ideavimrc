@@ -55,16 +55,15 @@ vmap H ^
 vmap L $
 vnoremap J :action MoveLineDown<CR>
 vnoremap K :action MoveLineUp<CR>
-nmap [ <action>(Back)
-nmap ] <action>(Forward)
-nmap { gt
-nmap } gT
+nmap [ gT
+nmap ] gt
 nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 vmap = :<BS><BS><BS><BS><BS><action>(ReformatCode)
 nmap s <Plug>(easymotion-s2)
 nmap f<space> f.
-nnoremap = V
+nnoremap = 
+
 vmap p P
 "vmap v <action>(EditorSelectWord)
 "vmap V <action>(EditorUnSelectWord)
@@ -79,7 +78,9 @@ nmap gi <action>(GotoImplementation)
 nmap gd <action>(GotoDeclaration)
 nmap ge <action>(GotoNextError)
 nmap gE <action>(GotoPreviousError)
-nmap gh <action>(QuickJavaDoc)
+nmap gu <action>(quickjavadoc)
+nmap gh <action>(Back)
+nmap gl <action>(Forward)
 
 " z命令
 nmap zk <action>(MethodUp)
