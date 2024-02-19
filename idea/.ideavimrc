@@ -45,6 +45,8 @@ let g:qs_secondary_color = '#4d7fff'
 "let g:EasyMotion_override_acejump = 0
 "let g:sneak#label = 1
 
+"------------ 快捷键映射 ----------------------"
+
 nmap <leader>p <Plug>ReplaceWithRegisterOperator
 nmap <leader>pp <Plug>ReplaceWithRegisterLine
 xmap <leader>p  <Plug>ReplaceWithRegisterVisual
@@ -63,7 +65,6 @@ nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 "nmap = <action>(ReformatCode)
 nmap s <Plug>(easymotion-s2)
-nmap f<space> f.
 nnoremap = 
 
 vmap p P
@@ -112,6 +113,7 @@ nmap <leader>nf <ACTION>(NewFile)
 let g:WhichKeyDesc_Arthas="<leader>a arthas"
 nmap <leader>at <action>(ArthasTrace)
 nmap <leader>aw <action>(ArthasWatch)
+nmap <leader>aa <action>(InspectCode)
 
 
 """ Git """
@@ -130,7 +132,9 @@ nmap <leader>gb <action>(Git.Branches)
 "nmap <leader>gt <action>(Git.Tag)
 nmap <leader>gn <action>(Git.CreateNewBranch)
 nmap <leader>g= <action>(Git.Add)
-nmap <leader>gs <action>(ChangesView.Shelve)
+nmap <leader>gs <action>(Git.Stash)
+nmap <leader>gS <action>(Git.Unstash)
+"nmap <leader>gs <action>(ChangesView.Shelve)
 let g:WhichKeyDesc_Git_MergeRequest="<leader>gm merge request"
 nmap <leader>gm <action>(GitLab_Helper.Merge)
 nmap <leader>gM <action>(Git.Merge)
@@ -149,6 +153,7 @@ nmap <leader><leader>cp <action>(CloseProject)
 let g:WhichKeyDesc_DR="<leader>d debug/run/test"
 nmap <leader>dd <action>(Debug)
 nmap <leader>dj <action>(JRebel Debug)
+nmap <leader>dk <action>(CompileDirty)
 nmap <leader>ds <action>(Stop)
 nmap <leader>dv <action>(ViewBreakpoints)
 nmap <leader>dc <action>(RunConfiguration)
@@ -205,6 +210,7 @@ nmap <leader>mm <action>(Maven.ExecuteGoal)
 nmap <leader>mi <action>(Maven.Reimport)
 nmap <leader>ms <action>(coderead.maven.search)
 
+""" quick operation """
 
 
 """ file """
@@ -222,14 +228,15 @@ nmap <leader>ff <action>(GotoFile)
 nmap <leader>fw <action>(FindInPath)
 nmap <leader>fr <action>(Tool.GotoRequestService)
 nmap <leader>fp <action>(ManageRecentProjects)
+nmap <leader>fd <action>($Delete)
 
-let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
-let g:WhichKeyDesc_Sonar="<leader>s sonar"
-nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
-let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
-nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
-let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
-nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
+"let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
+"let g:WhichKeyDesc_Sonar="<leader>s sonar"
+"nmap <leader>ss <action>(SonarLint.AnalyzeFiles)
+"let g:WhichKeyDesc_Sonar_AnalyzeAll="<leader>sa analyze all"
+"nmap <leader>sa <action>(SonarLint.AnalyzeAllFiles)
+"let g:WhichKeyDesc_Sonar_AnalyzeChange="<leader>sc analyze change"
+"nmap <leader>sc <action>(SonarLint.AnalyzeChangedFiles)
 
 
 let g:WhichKeyDesc_Vim="<leader>v vim"
@@ -257,6 +264,10 @@ let g:WhichKeyDesc_Buffer="<leader>b buffer"
 nmap <leader>tn <action>(tasks.goto)
 nmap <leader>ts <action>(tasks.switch)
 nmap <leader>tc <action>(tasks.close)
+let g:WhichKeyDesc_CustomPostFixTemplate="<leader>tp open custom post fix template"
+nmap <leader>tp <action>(Cpt.OpenTemplates)
+
+nmap <leader>is <action>(ShowSettings)
 
 
 """ Translate """ 
@@ -291,43 +302,43 @@ nmap zC <action>(CollapseAllRegions)
 
 
 """ Bookmark """
-nmap '0 <action>(ToggleBookmark0)
-nmap '1 <action>(ToggleBookmark1)
-nmap '2 <action>(ToggleBookmark2)
-nmap '3 <action>(ToggleBookmark3)
-nmap '4 <action>(ToggleBookmark4)
-nmap '5 <action>(ToggleBookmark5)
-nmap '6 <action>(ToggleBookmark6)
-nmap '7 <action>(ToggleBookmark7)
-nmap '8 <action>(ToggleBookmark8)
-nmap '9 <action>(ToggleBookmark9)
-nmap '1 <action>(ToggleBookmark1)
-nmap 'a <action>(ToggleBookmarkA)
-nmap 'b <action>(ToggleBookmarkB)
-nmap 'c <action>(ToggleBookmarkC)
-nmap 'd <action>(ToggleBookmarkD)
-nmap 'e <action>(ToggleBookmarkE)
-nmap 'f <action>(ToggleBookmarkF)
-nmap 'g <action>(ToggleBookmarkG)
-nmap 'h <action>(ToggleBookmarkH)
-nmap 'i <action>(ToggleBookmarkI)
-nmap 'j <action>(ToggleBookmarkJ)
-nmap 'k <action>(ToggleBookmarkK)
-nmap 'l <action>(ToggleBookmarkL)
-nmap 'm <action>(ToggleBookmarkM)
-nmap 'n <action>(ToggleBookmarkN)
-nmap 'o <action>(ToggleBookmarkO)
-nmap 'p <action>(ToggleBookmarkP)
-nmap 'q <action>(ToggleBookmarkQ)
-nmap 'r <action>(ToggleBookmarkR)
-nmap 's <action>(ToggleBookmarkS)
-nmap 't <action>(ToggleBookmarkT)
-nmap 'u <action>(ToggleBookmarkU)
-nmap 'v <action>(ToggleBookmarkV)
-nmap 'w <action>(ToggleBookmarkW)
-nmap 'x <action>(ToggleBookmarkX)
-nmap 'y <action>(ToggleBookmarkY)
-nmap 'z <action>(ToggleBookmarkZ)
+nmap M0 <action>(ToggleBookmark0)
+nmap M1 <action>(ToggleBookmark1)
+nmap M2 <action>(ToggleBookmark2)
+nmap M3 <action>(ToggleBookmark3)
+nmap M4 <action>(ToggleBookmark4)
+nmap M5 <action>(ToggleBookmark5)
+nmap M6 <action>(ToggleBookmark6)
+nmap M7 <action>(ToggleBookmark7)
+nmap M8 <action>(ToggleBookmark8)
+nmap M9 <action>(ToggleBookmark9)
+nmap M1 <action>(ToggleBookmark1)
+nmap Ma <action>(ToggleBookmarkA)
+nmap Mb <action>(ToggleBookmarkB)
+nmap Mc <action>(ToggleBookmarkC)
+nmap Md <action>(ToggleBookmarkD)
+nmap Me <action>(ToggleBookmarkE)
+nmap Mf <action>(ToggleBookmarkF)
+nmap Mg <action>(ToggleBookmarkG)
+nmap Mh <action>(ToggleBookmarkH)
+nmap Mi <action>(ToggleBookmarkI)
+nmap Mj <action>(ToggleBookmarkJ)
+nmap Mk <action>(ToggleBookmarkK)
+nmap Ml <action>(ToggleBookmarkL)
+nmap Mm <action>(ToggleBookmarkM)
+nmap Mn <action>(ToggleBookmarkN)
+nmap Mo <action>(ToggleBookmarkO)
+nmap Mp <action>(ToggleBookmarkP)
+nmap Mq <action>(ToggleBookmarkQ)
+nmap Mr <action>(ToggleBookmarkR)
+nmap Ms <action>(ToggleBookmarkS)
+nmap Mt <action>(ToggleBookmarkT)
+nmap Mu <action>(ToggleBookmarkU)
+nmap Mv <action>(ToggleBookmarkV)
+nmap Mw <action>(ToggleBookmarkW)
+nmap Mx <action>(ToggleBookmarkX)
+nmap My <action>(ToggleBookmarkY)
+nmap Mz <action>(ToggleBookmarkZ)
 
 nmap m; <action>(ShowBookmarks)
 nmap m0 <action>(GotoBookmark0)
