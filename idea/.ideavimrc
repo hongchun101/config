@@ -269,9 +269,21 @@ nmap <leader>vs :source ~\\.ideavimrc<CR>
 """ buffer window """
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 nmap <leader>bc <action>(CloseAllEditorsButActive)
-nmap <leader>bl <action>(CloseAllToTheLeft)
-nmap <leader>br <action>(CloseAllToTheRight)
+"nmap <leader>bl <action>(CloseAllToTheLeft)
+"nmap <leader>br <action>(CloseAllToTheRight)
 nmap <leader>bu <action>(CloseAllUnmodifiedEditors)
+nmap <leader>bp <action>(PinActiveEditorTab)
+nmap <leader>bn <action>(EditSourceInNewWindow)
+nmap <leader>br <action>(ReopenClosedTab)
+
+nmap <leader>bh <action>(SplitHorizontally)
+nmap <leader>bv <action>(SplitVertically)
+nmap <leader>bj <action>(MoveTabDown)
+nmap <leader>bl <action>(MoveTabRight)
+
+nmap <leader>bm <action>(MoveEditorToOppositeTabGroup)
+nmap <leader>bo <action>(OpenEditorInOppositeTabGroup)
+nmap <leader>bsc <action>(Unsplit)
 
 let g:WhichKeyDesc_Window="<leader>w window"
 
