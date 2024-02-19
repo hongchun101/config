@@ -168,35 +168,50 @@ nmap <leader>lr <action>(RenameElement)
 nmap <leader>eh <action>(MoveElementLeft)
 nmap <leader>el <action>(MoveElementRight)
 
+let g:WhichKeyDesc_Override="<leader>lo Override"
 nmap <leader>lo <action>(OverrideMethods)
+let g:WhichKeyDesc_Implement="<leader>li Implement"
 nmap <leader>li <action>(ImplementMethods)
 
+let g:WhichKeyDesc_ExtractMethod="<leader>lm Method Extract"
 nmap <leader>lm <action>(ExtractMethod)
 vmap <leader>lm <action>(ExtractMethod)
+let g:WhichKeyDesc_IntroduceConstanct="<leader>lc Constant Introduce"
 nmap <leader>lc <action>(IntroduceConstant)
 vmap <leader>lc <action>(IntroduceConstant)
+let g:WhichKeyDesc_IntroduceField="<leader>lf Field Introduce"
 nmap <leader>lf <action>(IntroduceField)
 vmap <leader>lf <action>(IntroduceField)
+let g:WhichKeyDesc_ParameterIntroduce="<leader>lp Parameter Introduce"
 nmap <leader>lp <action>(IntroduceParameter)
 vmap <leader>lp <action>(IntroduceParameter)
+let g:WhichKeyDesc_IntroduceVariable="<leader>lv Variable Introduce"
 nmap <leader>lv <action>(IntroduceVariable)
 vmap <leader>lv <action>(IntroduceVariable)
+let g:WhichKeyDesc_Inline="<leader>ii Inline"
 nmap <leader>ii <action>(Inline)
 vmap <leader>ii <action>(Inline)
 
+let g:WhichKeyDesc_MemberPushDown="<leader>ld member push down"
 nmap <leader>ld <action>(MemberPushDown)
+let g:WhichKeyDesc_MemberPushUp="<leader>lu member push up"
 nmap <leader>lu <action>(MembersPullUp)
 
+let g:WhichKeyDesc_ExtractClass="<leader>lC Class Extract"
 nmap <leader>lC <action>(ExtractClass)
 vmap <leader>lC <action>(ExtractClass)
+let g:WhichKeyDesc_ExtractInterface="<leader>lI Interface Extract"
 nmap <leader>lI <action>(ExtractInterface)
 vmap <leader>lI <action>(ExtractInterface)
+let g:WhichKeyDesc_ExtractSuperClass="<leader>lP Super Class Extract"
 nmap <leader>lP <action>(ExtractSuperclass)
 vmap <leader>lP <action>(ExtractSuperclass)
 
 
+let g:WhichKeyDesc_IntroduceFunctionParameter="<leader>llp Function Parameter Introduce"
 nmap <leader>llp <action>(IntroduceFunctionParameter)
 vmap <leader>llp <action>(IntroduceFunctionParameter)
+let g:WhichKeyDesc_IntroduceFunctionVariable="<leader>llv Function Variable Introduce"
 nmap <leader>llv <action>(IntroduceFunctionVariable)
 vmap <leader>llv <action>(IntroduceFunctionVariable)
 
