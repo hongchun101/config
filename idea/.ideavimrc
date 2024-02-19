@@ -95,8 +95,6 @@ nnoremap zl 50zl
 
 let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
 nmap <leader>h <action>(ShowIntentionActions)
-let g:WhichKeyDesc_Rename="<leader>r rename"
-nmap <leader>r <action>(RenameElement)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
@@ -164,6 +162,8 @@ nmap <leader>dt <action>(GotoTest)
 """ lsp """
 nmap <leader>lS <action>(ActivateStructureToolWindow)
 nmap <leader>ls <action>(FileStructurePopup)
+let g:WhichKeyDesc_Rename="<leader>lr rename"
+nmap <leader>lr <action>(RenameElement)
 
 nmap <leader>eh <action>(MoveElementLeft)
 nmap <leader>el <action>(MoveElementRight)
