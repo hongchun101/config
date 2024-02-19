@@ -230,8 +230,11 @@ nmap <leader>fr <action>(Tool.GotoRequestService)
 nmap <leader>fp <action>(ManageRecentProjects)
 nmap <leader>fd <action>($Delete)
 
+let g:WhichKeyDesc_CotextSave="<leader>ss context save"
 nmap <leader>ss <action>(context.save)
+let g:WhichKeyDesc_ContextLoad="<leader>sl context load"
 nmap <leader>sl <action>(context.load)
+let g:WhichKeyDesc_ContextClear="<leader>sc context clear"
 nmap <leader>sc <action>(context.clear)
 "let g:WhichKeyDesc_Sonar_Analyze="<leader>ss analyze"
 "let g:WhichKeyDesc_Sonar="<leader>s sonar"
