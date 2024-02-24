@@ -45,6 +45,9 @@ let g:qs_secondary_color = '#4d7fff'
 "let g:EasyMotion_override_acejump = 0
 "let g:sneak#label = 1
 
+nmap 99 dwds>
+nmap 00 dt(ds(
+
 "------------ 快捷键映射 ----------------------"
 
 nmap <leader>p <Plug>ReplaceWithRegisterOperator
@@ -65,7 +68,7 @@ nmap - <action>(OptimizeImports)
 nmap R <action>(RenameElement)
 "nmap = <action>(ReformatCode)
 nmap s <Plug>(easymotion-s2)
-nnoremap = 
+nnoremap =
 
 vmap p P
 "vmap v <action>(EditorSelectWord)
@@ -108,14 +111,14 @@ nmap <leader>nd <action>(NewDir)
 nmap <leader>nf <ACTION>(NewFile)
 
 """ arthas """
-let g:WhichKeyDesc_Arthas="<leader>a arthas"
+let g:WhichKeyDesc_Arthas="<leader>a Arthas"
 nmap <leader>at <action>(ArthasTrace)
 nmap <leader>aw <action>(ArthasWatch)
 nmap <leader>aa <action>(InspectCode)
 
 
 """ Git """
-let g:WhichKeyDesc_Git="<leader>g git"
+let g:WhichKeyDesc_Git="<leader>g Git"
 nmap gr <action>(Vcs.RollbackChangedLines)
 nmap <leader>ga <action>(Annotate)
 nmap <leader>gk <action>(ActivateCommitToolWindow)
@@ -140,7 +143,7 @@ nmap <leader>gR <action>(Git.Rebase)
 
 
 """ Copy Close """
-let g:WhichKeyDesc_CC="<leader><leader>c copy/close"
+let g:WhichKeyDesc_CC="<leader><leader>c Copy/Close"
 nmap <leader><leader>cn <action>(CopyFileName)
 nmap <leader><leader>cr <action>(CopyReference)
 nmap <leader><leader>cs <action>(CopySourceRootPath)
@@ -148,22 +151,28 @@ nmap <leader><leader>cp <action>(CloseProject)
 
 
 """ Debug Run Test """
-let g:WhichKeyDesc_DR="<leader>d debug/run/test"
+let g:WhichKeyDesc_DR="<leader>d Debug/Run/Test"
+nmap <leader>dc <action>(Compile)
 nmap <leader>dd <action>(Debug)
 nmap <leader>dj <action>(JRebel Debug)
 nmap <leader>dk <action>(CompileDirty)
 nmap <leader>ds <action>(Stop)
 nmap <leader>dv <action>(ViewBreakpoints)
-nmap <leader>dc <action>(RunConfiguration)
+"nmap <leader>dc <action>(RunConfiguration)
 nmap <leader>du <action>(UpdateRunningApplication)
 nmap <leader>dr <action>(Run)
 nmap <leader>dt <action>(GotoTest)
 
 """ lsp """
+let g:WhichKeyDesc_LSP="<leader>l LSP"
+
+let g:WhichKeyDesc_FileStructureWindow="<leader>lS Structure Window"
 nmap <leader>lS <action>(ActivateStructureToolWindow)
+let g:WhichKeyDesc_FileStructure="<leader>ls Structure Popup"
 nmap <leader>ls <action>(FileStructurePopup)
-let g:WhichKeyDesc_Rename="<leader>lr rename"
+let g:WhichKeyDesc_Rename="<leader>lr Rename"
 nmap <leader>lr <action>(RenameElement)
+nmap <leader>r <action>(RenameElement)
 
 nmap <leader>eh <action>(MoveElementLeft)
 nmap <leader>el <action>(MoveElementRight)
@@ -192,10 +201,12 @@ let g:WhichKeyDesc_Inline="<leader>ii Inline"
 nmap <leader>ii <action>(Inline)
 vmap <leader>ii <action>(Inline)
 
-let g:WhichKeyDesc_MemberPushDown="<leader>ld member push down"
+let g:WhichKeyDesc_MemberPushDown="<leader>ld Member Push Down"
 nmap <leader>ld <action>(MemberPushDown)
-let g:WhichKeyDesc_MemberPushUp="<leader>lu member push up"
+let g:WhichKeyDesc_MemberPushUp="<leader>lu Member Push Up"
 nmap <leader>lu <action>(MembersPullUp)
+
+nmap <leader>ev <action>(refactoring.introduce.property)
 
 let g:WhichKeyDesc_ExtractClass="<leader>lC Class Extract"
 nmap <leader>lC <action>(ExtractClass)
@@ -220,10 +231,12 @@ nmap <leader><leader>ht <action>(TypeHierarchy)
 nmap <leader><leader>hc <action>(CallHierarchy)
 
 """ maven """
-let g:whichkeydesc_maven="<leader><leader>m maven"
+let g:whichkeydesc_maven="<leader>m Maven"
 nmap <leader>mm <action>(Maven.ExecuteGoal)
 nmap <leader>mi <action>(Maven.Reimport)
 nmap <leader>ms <action>(coderead.maven.search)
+nmap <leader>mq <action>(Maven.ViewDependencyAnalyzer)
+
 
 """ quick operation """
 
@@ -267,7 +280,7 @@ let g:WhichKeyDesc_Vim_Source="<leader>vs source"
 nmap <leader>vs :source ~\\.ideavimrc<CR>
 
 """ buffer window """
-let g:WhichKeyDesc_Buffer="<leader>b buffer"
+let g:WhichKeyDesc_Buffer="<leader>b Buffer"
 nmap <leader>bc <action>(CloseAllEditorsButActive)
 "nmap <leader>bl <action>(CloseAllToTheLeft)
 "nmap <leader>br <action>(CloseAllToTheRight)
@@ -285,13 +298,15 @@ nmap <leader>bm <action>(MoveEditorToOppositeTabGroup)
 nmap <leader>bo <action>(OpenEditorInOppositeTabGroup)
 nmap <leader>bsc <action>(Unsplit)
 
-let g:WhichKeyDesc_Window="<leader>w window"
+let g:WhichKeyDesc_Window="<leader>w Window"
 
 let g:WhichKeyDesc_Buffer_W="<leader>w save"
 nmap <leader>w :w<CR>
 
 let g:WhichKeyDesc_Buffer_Delete="<leader>c close buffer"
 nmap <leader>c :bdelete<CR>
+nmap <leader>C <action>(HideActiveWindow)
+
 let g:WhichKeyDesc_Buffer="<leader>b buffer"
 
 nmap <leader>tn <action>(tasks.goto)
@@ -300,10 +315,21 @@ nmap <leader>tc <action>(tasks.close)
 let g:WhichKeyDesc_CustomPostFixTemplate="<leader>tp open custom post fix template"
 nmap <leader>tp <action>(Cpt.OpenTemplates)
 
+nmap <leader>t0 <action>(ActivateTerminalToolWindow)
+nmap <leader>t1 <action>(ActivateProjectToolWindow)
+nmap <leader>t2 <action>(ActivateMavenToolWindow)
+"nmap <leader>t3 <action>()
+nmap <leader>t4 <action>(ActivateRunToolWindow)
+nmap <leader>t5 <action>(ActivateDebugToolWindow)
+nmap <leader>t6 <action>(ActivateBuildToolWindow)
+"nmap <leader>t7 <action>()
+"nmap <leader>t8 <action>()
+"nmap <leader>t9 <action>()
+
 nmap <leader>is <action>(ShowSettings)
 
 
-""" Translate """ 
+""" Translate """
 let g:WhichKeyDesc_Y="<leader>y"
 let g:WhichKeyDesc_y="<leader>Y"
 nmap <leader>y <action>($EditorTranslateAction)
@@ -311,7 +337,7 @@ vmap <leader>y <action>($EditorTranslateAction)
 nmap <leader>Y <action>($TranslateAndReplaceAction)
 
 
-    """ UI/UX """
+""" UI/UX """
 let g:WhichKeyDesc_U="<leader>u UI/UX"
 let g:WhichKeyDesc_UF="<leader>uf toggle full screen"
 let g:WhichKeyDesc_UP="<leader>up toggle presentation mode "

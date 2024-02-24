@@ -1,0 +1,122 @@
+{
+  "vim.vimrc.path": "c:\\Users\\12513\\vscode.vim",
+  "vim.camelCaseMotion.enable": true,
+  "vim.replaceWithRegister": true,
+  "vim.sneak": false,
+  "vim.useCtrlKeys": false,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": false,
+  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+  "vim.leap": true,
+  "vim.leader": "space",
+  "vim.smartcase": true,
+  "vim.ignorecase": true,
+  "vim.showcmd": true,
+  "vim.showmodename": true,
+  "vim.autoindent": true,
+  "vim.digraphs": {},
+  "vim.foldfix": true,
+  "vim.vimrc.enable": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-x>": false,
+    "<C-c>": false,
+    "<C-h>": false
+  },
+  "vim.hlsearch": true,
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "n",
+        "h"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "commands": [
+        "bookmarks.jumpToNext"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "bookmarks.jumpToPrevious"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
+      "commands": [
+        "workbench.action.closeOtherEditors"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "z"
+      ],
+      "commands": [
+        "editor.debug.action.toggleBreakpoint"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "d"
+      ],
+      "commands": [
+        "workbench.action.debug.start"
+      ]
+    },
+    {
+      "before": [
+        "="
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "-"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "command": [
+        ":w"
+      ]
+    }
+  ]
+}
