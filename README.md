@@ -1,6 +1,6 @@
 # 配置
 
-## idea
+## 1. idea
 
 ### ideavim
 
@@ -8,4 +8,4 @@
 
 ### 插件列表
 
-## autohotkey
+## 2. autohotkey
