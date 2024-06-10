@@ -94,6 +94,8 @@ nnoremap zl 50zl
 
 let g:WhichKeyDesc_ShowIntentionActions="<leader>h"
 nmap <leader>h <action>(ShowIntentionActions)
+let g:WhichKeyDesc_ShowHoverInfo="<leader>H hover"
+nmap <leader>H <action>(ShowHoverInfo)
 
 " leader键映射
 nmap <leader><leader>c <action>(CodeMenu)
@@ -102,8 +104,11 @@ nmap <leader><leader>c <action>(CodeMenu)
 let g:WhichKeyDesc_Nerdtree="<leader>o NerdTree"
 nmap <leader>o :NERDTreeFind<CR>
 
+let g:WhichKeyDesc_New="<leader>nn new class"
 nmap <leader>nn <action>(NewClass)
+let g:WhichKeyDesc_NewDir="<leader>nd new directory"
 nmap <leader>nd <action>(NewDir)
+let g:WhichKeyDesc_NewFile="<leader>nf new file"
 nmap <leader>nf <ACTION>(NewFile)
 
 """ arthas """
@@ -229,8 +234,11 @@ nmap <leader><leader>hc <action>(CallHierarchy)
 """ maven """
 let g:WhichKeyDesc_maven="<leader>m Maven"
 nmap <leader>mm <action>(Maven.ExecuteGoal)
+let g:WhichKeyDesc_MavenReimport="<leader>mi maven reimport"
 nmap <leader>mi <action>(Maven.Reimport)
+let g:WhichKeyDesc_MavenSearch="<leader>ms maven search"
 nmap <leader>ms <action>(coderead.maven.search)
+let g:WhichKeyDesc_MavenAnalyzer="<leader>mq dependency analyzer"
 nmap <leader>mq <action>(Maven.ViewDependencyAnalyzer)
 
 
