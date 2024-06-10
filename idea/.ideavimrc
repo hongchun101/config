@@ -45,9 +45,6 @@ let g:qs_secondary_color = '#4d7fff'
 "let g:EasyMotion_override_acejump = 0
 "let g:sneak#label = 1
 
-nmap 99 dwds>
-nmap 00 dt(ds(
-
 "------------ 快捷键映射 ----------------------"
 
 nmap <leader>p <Plug>ReplaceWithRegisterOperator
@@ -65,10 +62,9 @@ vnoremap K :action MoveLineUp<CR>
 nmap [ gT
 nmap ] gt
 nmap - <action>(OptimizeImports)
+nmap = <action>(ReformatCode)
 nmap R <action>(RenameElement)
-"nmap = <action>(ReformatCode)
 nmap s <Plug>(easymotion-s2)
-nnoremap =
 
 vmap p P
 "vmap v <action>(EditorSelectWord)
@@ -185,7 +181,7 @@ nmap <leader>li <action>(ImplementMethods)
 let g:WhichKeyDesc_ExtractMethod="<leader>lm Method Extract"
 nmap <leader>lm <action>(ExtractMethod)
 vmap <leader>lm <action>(ExtractMethod)
-let g:WhichKeyDesc_IntroduceConstanct="<leader>lc Constant Introduce"
+let g:WhichKeyDesc_IntroduceConstant="<leader>lc Constant Introduce"
 nmap <leader>lc <action>(IntroduceConstant)
 vmap <leader>lc <action>(IntroduceConstant)
 let g:WhichKeyDesc_IntroduceField="<leader>lf Field Introduce"
@@ -231,7 +227,7 @@ nmap <leader><leader>ht <action>(TypeHierarchy)
 nmap <leader><leader>hc <action>(CallHierarchy)
 
 """ maven """
-let g:whichkeydesc_maven="<leader>m Maven"
+let g:WhichKeyDesc_maven="<leader>m Maven"
 nmap <leader>mm <action>(Maven.ExecuteGoal)
 nmap <leader>mi <action>(Maven.Reimport)
 nmap <leader>ms <action>(coderead.maven.search)
@@ -254,11 +250,10 @@ nmap <leader>fc <action>(CopyElement)
 nmap <leader>fo <action>(RecentFiles)
 nmap <leader>ff <action>(GotoFile)
 nmap <leader>fw <action>(FindInPath)
-nmap <leader>fr <action>(Tool.GotoRequestService)
 nmap <leader>fp <action>(ManageRecentProjects)
-nmap <leader>fd <action>($Delete)
+nmap <leader>fu <action>(GotoUrlAction)
 
-let g:WhichKeyDesc_CotextSave="<leader>ss context save"
+let g:WhichKeyDesc_ContextSave="<leader>ss context save"
 nmap <leader>ss <action>(context.save)
 let g:WhichKeyDesc_ContextLoad="<leader>sl context load"
 nmap <leader>sl <action>(context.load)
@@ -399,7 +394,7 @@ nmap Mx <action>(ToggleBookmarkX)
 nmap My <action>(ToggleBookmarkY)
 nmap Mz <action>(ToggleBookmarkZ)
 
-nmap m; <action>(ShowBookmarks)
+nmap mm <action>(ShowBookmarks)
 nmap m0 <action>(GotoBookmark0)
 nmap m1 <action>(GotoBookmark1)
 nmap m2 <action>(GotoBookmark2)
@@ -422,7 +417,7 @@ nmap mi <action>(GotoBookmarkI)
 nmap mj <action>(GotoBookmarkJ)
 nmap mk <action>(GotoBookmarkK)
 nmap ml <action>(GotoBookmarkL)
-nmap mm <action>(GotoBookmarkM)
+"nmap mm <action>(GotoBookmarkM)
 nmap mn <action>(GotoBookmarkN)
 nmap mo <action>(GotoBookmarkO)
 nmap mp <action>(GotoBookmarkP)
