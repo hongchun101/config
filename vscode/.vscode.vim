@@ -1,3 +1,0 @@
-nnoremap H ^
-nnoremap L $
-

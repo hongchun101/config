@@ -1,122 +1,71 @@
 {
-  "vim.vimrc.path": "c:\\Users\\12513\\vscode.vim",
-  "vim.camelCaseMotion.enable": true,
-  "vim.replaceWithRegister": true,
-  "vim.sneak": false,
-  "vim.useCtrlKeys": false,
-  "vim.useSystemClipboard": true,
-  "vim.easymotion": false,
-  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
-  "vim.leap": true,
-  "vim.leader": "space",
-  "vim.smartcase": true,
-  "vim.ignorecase": true,
-  "vim.showcmd": true,
-  "vim.showmodename": true,
-  "vim.autoindent": true,
-  "vim.digraphs": {},
-  "vim.foldfix": true,
-  "vim.vimrc.enable": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    "<C-x>": false,
-    "<C-c>": false,
-    "<C-h>": false
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path-mac": "/Users/as/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vscode-kubernetes.kubectl-path-mac": "/Users/as/.vs-kubernetes/tools/kubectl/kubectl",
+    "vscode-kubernetes.minikube-path-mac": "/Users/as/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
   },
-  "vim.hlsearch": true,
-  "vim.commandLineModeKeyBindingsNonRecursive": [],
-  "vim.visualModeKeyBindingsNonRecursive": [],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "n",
-        "h"
-      ],
-      "commands": [
-        ":nohl"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "j"
-      ],
-      "commands": [
-        "bookmarks.jumpToNext"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "k"
-      ],
-      "commands": [
-        "bookmarks.jumpToPrevious"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "a"
-      ],
-      "commands": [
-        "workbench.action.closeOtherEditors"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "l"
-      ],
-      "commands": [
-        "bookmarks.toggle"
-      ]
-    },
-    {
-      "before": [
-        "z",
-        "z"
-      ],
-      "commands": [
-        "editor.debug.action.toggleBreakpoint"
-      ]
-    },
-    {
-      "before": [
-        "z",
-        "d"
-      ],
-      "commands": [
-        "workbench.action.debug.start"
-      ]
-    },
-    {
-      "before": [
-        "="
-      ],
-      "commands": [
-        "editor.action.formatDocument"
-      ]
-    },
-    {
-      "before": [
-        "-"
-      ],
-      "commands": [
-        "editor.action.formatDocument"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w"
-      ],
-      "command": [
-        ":w"
-      ]
+  "editor.fontSize": 20,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
+  "editor.fontFamily": "'FiraMono Nerd Font'",
+  "terminal.integrated.profiles.osx": {
+    "NuShell": {
+      "path": "nu",
+      "args": ["-l"]
     }
-  ]
+  },
+  "terminal.integrated.defaultProfile.osx": "NuShell",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.inlayHints.enabled": "on"
+  },
+  "java.inlayHints.parameterNames.enabled": "all",
+  "java.inlayHints.parameterNames.exclusions": [],
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "editor.inlayHints.enabled": "on",
+  "remote.SSH.remotePlatform": {
+    "14.103.170.252": "linux"
+  },
+  "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+  "cursorpyright.analysis.inlayHints.genericTypes": true,
+  "cursorpyright.analysis.inlayHints.variableTypes": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.goroot": "/usr/local/opt/go/libexec", 
+  "go.toolsEnvVars": {
+    "GOROOT": "/usr/local/opt/go/libexec", 
+    "PATH": "/usr/local/opt/go/bin"
+  },
+  "editor.inlayHints.padding": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "vue.inlayHints.destructuredProps": true,
+  "vue.inlayHints.inlineHandlerLeading": true,
+  "vue.inlayHints.missingProps": true,
+  "vue.inlayHints.optionsWrapper": true,
+  "vue.inlayHints.vBindShorthand": true,
+  "Lingma.aI Chat.mcpToolsInAgentMode": true,
 }
+

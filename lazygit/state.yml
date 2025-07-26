@@ -1,0 +1,13 @@
+lastupdatecheck: 1740565571
+recentrepos:
+startuppopupversion: 5
+lastversion: 0.50.0
+customcommandshistory:
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 2
+renamesimilaritythreshold: 45
+localbranchsortorder: date
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
